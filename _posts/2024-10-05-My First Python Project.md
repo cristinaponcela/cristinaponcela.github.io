@@ -53,7 +53,8 @@ Extensions:
 #### Introduction <a class="anchor" id="intro"></a>
 
 For a positive integer n the sum of proper divisors function is
-$$s(n) = \sum_{\substack{d|n \\ d \neq n}} d$$.
+![Equation](https://latex.codecogs.com/svg.latex?s(n)=\sum_{\substack{d|n\\d\neq%20n}}d) .
+
 
 It gives the sum of all positive divisors of n, excluding n. Interest in this function goes
 back to the Pythagoreans (6th century B.C.E.). Aliquot sequences are the seqeunces formed by
