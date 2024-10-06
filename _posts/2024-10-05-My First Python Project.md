@@ -53,7 +53,7 @@ Extensions:
 #### Introduction <a class="anchor" id="intro"></a>
 
 For a positive integer n the sum of proper divisors function is
-![Equation](https://latex.codecogs.com/svg.latex?s(n)=\sum_{\substack{d|n\\d\neq%20n}}d) .
+$s(n) = \sum_{\substack{d|n \\ d \neq n}} d$.
 
 
 It gives the sum of all positive divisors of n, excluding n. Interest in this function goes
