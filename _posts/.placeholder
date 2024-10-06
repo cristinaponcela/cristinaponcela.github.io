@@ -1,1 +1,18 @@
+---
+title:
+date:
+categories:
+tags:
 
+# is h1
+## is h2
+# etc
+# ```javascript
+#
+# ``` # for code
+# * for unordered list
+
+# ![image_description](url)_Caption_
+
+# > does the cool green notification-like thing
+---
