@@ -2784,7 +2784,7 @@ for y in y0:
 
 
     
-![png](./posts/1stPythonProjectOutputs/output_192_1.png)
+![png](https://github.com/cristina22999/cristina22999.github.io/blob/main/assets/1stPythonProjectOutputs/output_192_1.png)
     
 
 
@@ -2803,7 +2803,7 @@ for y in y0:
 
 
     
-![png](./posts/1stPythonProjectOutputs/output_193_1.png)
+![png](https://github.com/cristina22999/cristina22999.github.io/blob/main/assets/1stPythonProjectOuputs/output_193_1.png)
     
 
 
