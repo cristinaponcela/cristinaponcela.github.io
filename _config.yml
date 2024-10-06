@@ -107,13 +107,13 @@ social_preview_image: # string, local or CORS resources
 # boolean type, the global switch for TOC in posts.
 toc: true
 
-comments.activate: 
+comments:
 
   # Global switch for the post-comment system. Keeping it empty means disabled.
   provider: disqus # [disqus | utterances | giscus]
   # The provider options are as follows:
   disqus:
-    shortname: https-cristina22999-github-io.disqus.com
+    shortname: https-cristina22999-github-io
     # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
     # utterances settings › https://utteranc.es/
     # utterances:
