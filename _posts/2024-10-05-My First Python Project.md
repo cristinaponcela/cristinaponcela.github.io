@@ -1047,7 +1047,7 @@ print(classify_loops(100, 30, 1e9))
 
 
     
-![png](https://github.com/cristina22999/cristina22999.github.io/blob/main/assets/1stPythonProjectOuputs/output_88_1.png)
+![png](https://raw.githubusercontent.com/cristina22999/cristina22999.github.io/refs/heads/main/assets/1stPythonProjectOuputs/output_88_1.png)
     
 
 
@@ -1058,7 +1058,7 @@ plot_loops(20000, 30)
 
 
     
-![png](https://github.com/cristina22999/cristina22999.github.io/blob/main/assets/1stPythonProjectOuputs/output_89_0.png)
+![png](https://raw.githubusercontent.com/cristina22999/cristina22999.github.io/refs/heads/main/assets/1stPythonProjectOuputs/output_89_0.png)
     
 
 
@@ -1069,7 +1069,7 @@ plot_loops(20000, 30, 1e6)
 
 
     
-![png](https://github.com/cristina22999/cristina22999.github.io/blob/main/assets/1stPythonProjectOuputs/output_90_0.png)
+![png](https://raw.githubusercontent.com/cristina22999/cristina22999.github.io/refs/heads/main/assets/1stPythonProjectOuputs/output_90_0.png)
     
 
 
@@ -1080,73 +1080,73 @@ plot_loops_show(563)
 
 
     
-![png](https://github.com/cristina22999/cristina22999.github.io/blob/main/assets/1stPythonProjectOuputs/output_91_0.png)
+![png](https://raw.githubusercontent.com/cristina22999/cristina22999.github.io/refs/heads/main/assets/1stPythonProjectOuputs/output_91_0.png)
     
 
 
 
     
-![png](https://github.com/cristina22999/cristina22999.github.io/blob/main/assets/1stPythonProjectOuputs/output_91_1.png)
+![png](https://raw.githubusercontent.com/cristina22999/cristina22999.github.io/refs/heads/main/assets/1stPythonProjectOuputs/output_91_1.png)
     
 
 
 
     
-![png](https://github.com/cristina22999/cristina22999.github.io/blob/main/assets/1stPythonProjectOuputs/output_91_2.png)
+![png](https://raw.githubusercontent.com/cristina22999/cristina22999.github.io/refs/heads/main/assets/1stPythonProjectOuputs/output_91_2.png)
     
 
 
 
     
-![png](https://github.com/cristina22999/cristina22999.github.io/blob/main/assets/1stPythonProjectOuputs/output_91_3.png)
+![png](https://raw.githubusercontent.com/cristina22999/cristina22999.github.io/refs/heads/main/assets/1stPythonProjectOuputs/output_91_3.png)
     
 
 
 
     
-![png](https://github.com/cristina22999/cristina22999.github.io/blob/main/assets/1stPythonProjectOuputs/output_91_4.png)
+![png](https://raw.githubusercontent.com/cristina22999/cristina22999.github.io/refs/heads/main/assets/1stPythonProjectOuputs/output_91_4.png)
     
 
 
 
     
-![png](https://github.com/cristina22999/cristina22999.github.io/blob/main/assets/1stPythonProjectOuputs/output_91_5.png)
+![png](https://raw.githubusercontent.com/cristina22999/cristina22999.github.io/refs/heads/main/assets/1stPythonProjectOuputs/output_91_5.png)
     
 
 
 
     
-![png](https://github.com/cristina22999/cristina22999.github.io/blob/main/assets/1stPythonProjectOuputs/output_91_6.png)
+![png](https://raw.githubusercontent.com/cristina22999/cristina22999.github.io/refs/heads/main/assets/1stPythonProjectOuputs/output_91_6.png)
     
 
 
 
     
-![png](https://github.com/cristina22999/cristina22999.github.io/blob/main/assets/1stPythonProjectOuputs/output_91_7.png)
+![png](https://raw.githubusercontent.com/cristina22999/cristina22999.github.io/refs/heads/main/assets/1stPythonProjectOuputs/output_91_7.png)
     
 
 
 
     
-![png](https://github.com/cristina22999/cristina22999.github.io/blob/main/assets/1stPythonProjectOuputs/output_91_8.png)
+![png](https://raw.githubusercontent.com/cristina22999/cristina22999.github.io/refs/heads/main/assets/1stPythonProjectOuputs/output_91_8.png)
     
 
 
 
     
-![png](https://github.com/cristina22999/cristina22999.github.io/blob/main/assets/1stPythonProjectOuputs/output_91_9.png)
+![png](https://raw.githubusercontent.com/cristina22999/cristina22999.github.io/refs/heads/main/assets/1stPythonProjectOuputs/output_91_9.png)
     
 
 
 
     
-![png](https://github.com/cristina22999/cristina22999.github.io/blob/main/assets/1stPythonProjectOuputs/output_91_10.png)
+![png](https://raw.githubusercontent.com/cristina22999/cristina22999.github.io/refs/heads/main/assets/1stPythonProjectOuputs/output_91_10.png)
     
 
 
 
     
-![png](https://github.com/cristina22999/cristina22999.github.io/blob/main/assets/1stPythonProjectOuputs/output_91_11.png)
+![png](https://raw.githubusercontent.com/cristina22999/cristina22999.github.io/refs/heads/main/assets/1stPythonProjectOuputs/output_91_11.png)
     
 
 
@@ -1159,7 +1159,7 @@ plot_aliq_seq(2856, 200)
 
 
     
-![png](https://github.com/cristina22999/cristina22999.github.io/blob/main/assets/1stPythonProjectOuputs/output_93_0.png)
+![png](https://raw.githubusercontent.com/cristina22999/cristina22999.github.io/refs/heads/main/assets/1stPythonProjectOuputs/output_93_0.png)
     
 
 
@@ -1172,7 +1172,7 @@ plot_aliq_seq(12496, 30)
 
 
     
-![png](https://github.com/cristina22999/cristina22999.github.io/blob/main/assets/1stPythonProjectOuputs/output_95_0.png)
+![png](https://raw.githubusercontent.com/cristina22999/cristina22999.github.io/refs/heads/main/assets/1stPythonProjectOuputs/output_95_0.png)
     
 
 
@@ -1212,7 +1212,7 @@ plot_big_loop_lengths(100, 30, 0)
 
 
     
-![png](https://github.com/cristina22999/cristina22999.github.io/blob/main/assets/1stPythonProjectOuputs/output_99_0.png)
+![png](https://raw.githubusercontent.com/cristina22999/cristina22999.github.io/refs/heads/main/assets/1stPythonProjectOuputs/output_99_0.png)
     
 
 
@@ -1223,7 +1223,7 @@ plot_big_loop_lengths(500, 30, 1)
 
 
     
-![png](https://github.com/cristina22999/cristina22999.github.io/blob/main/assets/1stPythonProjectOuputs/output_100_0.png)
+![png](https://raw.githubusercontent.com/cristina22999/cristina22999.github.io/refs/heads/main/assets/1stPythonProjectOuputs/output_100_0.png)
     
 
 
@@ -1234,7 +1234,7 @@ plot_big_loop_lengths(30000)
 
 
     
-![png](https://github.com/cristina22999/cristina22999.github.io/blob/main/assets/1stPythonProjectOuputs/output_101_0.png)
+![png](https://raw.githubusercontent.com/cristina22999/cristina22999.github.io/refs/heads/main/assets/1stPythonProjectOuputs/output_101_0.png)
     
 
 
@@ -1261,7 +1261,7 @@ print(classify_terminated(100))
 
 
     
-![png](https://github.com/cristina22999/cristina22999.github.io/blob/main/assets/1stPythonProjectOuputs/output_103_1.png)
+![png](https://raw.githubusercontent.com/cristina22999/cristina22999.github.io/refs/heads/main/assets/1stPythonProjectOuputs/output_103_1.png)
     
 
 
@@ -1284,7 +1284,7 @@ plot_exceeded(2000, 30, 1e9)
 
 
     
-![png](https://github.com/cristina22999/cristina22999.github.io/blob/main/assets/1stPythonProjectOuputs/output_105_0.png)
+![png](https://raw.githubusercontent.com/cristina22999/cristina22999.github.io/refs/heads/main/assets/1stPythonProjectOuputs/output_105_0.png)
     
 
 
@@ -1311,7 +1311,7 @@ plot_reached_term(1000, 30, 1e9)
 
 
     
-![png](https://github.com/cristina22999/cristina22999.github.io/blob/main/assets/1stPythonProjectOuputs/output_107_1.png)
+![png](https://raw.githubusercontent.com/cristina22999/cristina22999.github.io/refs/heads/main/assets/1stPythonProjectOuputs/output_107_1.png)
     
 
 
@@ -2803,7 +2803,7 @@ for y in y0:
 
 
     
-![png](https://github.com/cristina22999/cristina22999.github.io/blob/main/assets/1stPythonProjectOuputs/output_193_1.png)
+![png](https://raw.githubusercontent.com/cristina22999/cristina22999.github.io/refs/heads/main/assets/1stPythonProjectOuputs/output_193_1.png)
     
 
 
@@ -2820,7 +2820,7 @@ for y in y1:
 
 
     
-![png](https://github.com/cristina22999/cristina22999.github.io/blob/main/assets/1stPythonProjectOuputs/output_194_1.png)
+![png](https://raw.githubusercontent.com/cristina22999/cristina22999.github.io/refs/heads/main/assets/1stPythonProjectOuputs/output_194_1.png)
     
 
 
@@ -2837,7 +2837,7 @@ for y in y2:
 
 
     
-![png](https://github.com/cristina22999/cristina22999.github.io/blob/main/assets/1stPythonProjectOuputs/output_195_1.png)
+![png](https://raw.githubusercontent.com/cristina22999/cristina22999.github.io/refs/heads/main/assets/1stPythonProjectOuputs/output_195_1.png)
     
 
 
