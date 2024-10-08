@@ -152,7 +152,7 @@ pwa:
 paginate: 10
 
 # The base URL of your site
-baseurl: "https://raw.githubusercontent.com/cristina22999/cristina22999.github.io/refs/heads"
+baseurl: "https://cristina22999.github.io/"
 
 # ------------ The following options are not recommended to be modified ------------------
 

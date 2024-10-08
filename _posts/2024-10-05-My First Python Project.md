@@ -3,6 +3,7 @@ title: My First Python Project
 date: 2024-10-05 20:47:00 -500
 categories: [coding for beginners, my journey, project ideas]
 tags: [python, for beginners]
+image: "https://raw.githubusercontent.com/cristina22999/cristina22999.github.io/refs/heads/main/assets/img/python.jpg"
 ---
 
 
