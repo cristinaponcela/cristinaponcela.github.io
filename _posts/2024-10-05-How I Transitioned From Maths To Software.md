@@ -3,7 +3,7 @@ title: How I Transitioned from Maths to Software
 date: 2024-10-05 14:13:00 -500
 categories: [coding for beginners, my journey]
 tags: [python, flutter, for beginners]
-image: /assets/img/python.jpg
+image: https://raw.githubusercontent.com/cristina22999/cristina22999.github.io/refs/heads/assets/img/python.jpg
 ---
 
 
