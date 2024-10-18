@@ -12,13 +12,13 @@ I am originally from Spain, but studied university in the UK and now live in Ita
 
 I learned how to code about one and a half years ago, and kind of stumbled into it. I have built an application in React-Native, 2 applications in Flutter, and a Computer Vision Machine Learning model in TensorFlow. I also have experience in Python, and have built several websites (both from scratch or otherwise). 
 
-::: tip Favourite languages:
-Python and Flutter
-:::
+> [!TIP] Favourite languages:
+> Python and Flutter
 
-::: warning Least favourites:
-R and Flutter
-:::
+
+> [!WARNING] Least favourites:
+> R and Flutter
+
 
 I love speaking about tech and science, so do reach out if you would like to get in touch!
 
