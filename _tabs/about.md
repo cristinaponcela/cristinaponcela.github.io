@@ -22,4 +22,4 @@ R and Flutter
 
 I love speaking about tech and science, so do reach out if you would like to get in touch!
 
-![A picture of me trying to get off of a rock in a canyon in Kyrgyzstan. I only have one hiking stick because I was a poor student.](assets/img/kyrgyzstan.jpg)
+![A picture of me trying to get off of a rock in a canyon in Kyrgyzstan. I only have one hiking stick because I was a poor student.](/assets/img/kyrgyzstan.jpg)
