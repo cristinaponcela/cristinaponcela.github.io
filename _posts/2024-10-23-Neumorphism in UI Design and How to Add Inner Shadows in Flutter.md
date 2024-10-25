@@ -3,7 +3,7 @@ title: Neumorphism in UI Design and How to Add Inner Shadows in Flutter
 date: 2024-10-23 18:23:00 -500
 categories: [Flutter, gist, UI Designs]
 tags: [flutter, for beginners, recommendations, neumorphism]
-image: "https://raw.githubusercontent.com/cristina22999/cristina22999.github.io/refs/heads/main/assets/img/neumorphic-ui-3.png"
+image: "https://raw.githubusercontent.com/cristina22999/cristina22999.github.io/refs/heads/main/assets/img/neumorphic-ui-4.png"
 ---
 
 
