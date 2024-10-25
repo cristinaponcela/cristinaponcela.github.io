@@ -18,6 +18,18 @@ Several apps and platforms use neumorphism to create a visually soothing, user-f
 ![Desktop View](/assets/img/neumorphic-ui-2.png){: width="280vw" height="420vw" }{: .right}
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 ## Implementing Neumorphism in Flutter with the Neumorphic Package
 
 Flutter offers a Neumorphic package that makes it relatively easy to add neumorphic styles to your app. The package allows you to create soft shadows and highlights, add rounded edges, and build out raised or inset UI elements. You can adjust properties like `depth`, `lightSource`, and `color` to fine-tune the effect, achieving the classic neumorphic look.
