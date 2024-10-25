@@ -14,8 +14,8 @@ It is most commonly used on buttons, and evolved from skeumorphism to make digit
 
 Several apps and platforms use neumorphism to create a visually soothing, user-friendly experience. You may have already encountered such designs:
 
-![Desktop View](/assets/img/neumorphic-ui.png){: width="140vw" height="210vw" }
-![Desktop View](/assets/img/neumorphic-ui-2.png){: width="280vw" height="420vw" }
+![Desktop View](/assets/img/neumorphic-ui.png){: width="280vw" height="420vw" }{: .left}
+![Desktop View](/assets/img/neumorphic-ui-2.png){: width="280vw" height="420vw" }{: .right}
 
 
 ## Implementing Neumorphism in Flutter with the Neumorphic Package
@@ -40,6 +40,8 @@ child: Text("Press Me"),
 ## The Challenge of Adding Inner Shadows in Flutter
 
 While the Neumorphic package is powerful, Flutter doesn’t have a straightforward way to add inner shadows. Inner shadows are essential for creating realistic "pressed" effects in neumorphic designs, but Flutter lacks a built-in method for this effect. Here is the workaround I usually use to achieve this effect:
+
+![Desktop View](/assets/img/inner_shadow.png){: width="280vw" height="420vw" }{: .right}
 
 ```dart
 // Custom widget for adding inner shadow
@@ -117,7 +119,5 @@ class _RenderInnerShadow extends RenderProxyBox {
   }
 }
 ```
-
-![Desktop View](/assets/img/inner_shadow.png){: width="560vw" height="840vw" }{: .right}
 
 Check out my full solution in my [gist](https://gist.github.com/cristinaponcela/3053d28b0ba280e2b61da5e34b8e5203).
