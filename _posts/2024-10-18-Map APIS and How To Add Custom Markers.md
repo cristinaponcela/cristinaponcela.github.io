@@ -29,10 +29,10 @@ The downside? You’ll need to set up billing since it’s a paid service after 
 Mapbox is another popular alternative, offering beautiful visual styling and customization options. It’s ideal if you need highly customizable map tiles or specific geographical data. 
 
 
-![Desktop View](/assets/img/emoji_markers.png){: width="14vw" height="21vw" }
-![Desktop View](/assets/img/pics_markers.png){: width="14vw height="21vw" }
-![Desktop View](/assets/img/more_pics_markers.png){: width="14vw height="21vw" }
-![Desktop View](/assets/img/black_pics_markers.png){: width="14vw height="21vw" }
+![Desktop View](/assets/img/emoji_markers.png){: width="140vw" height="210vw" }
+![Desktop View](/assets/img/pics_markers.png){: width="140vw height="210vw" }
+![Desktop View](/assets/img/more_pics_markers.png){: width="140vw height="210vw" }
+![Desktop View](/assets/img/black_pics_markers.png){: width="140vw height="210vw" }
 
 > Warning: if you ever get the weird black lines as streets on the Emulator on flutter_google_maps, don't worry. When the zoom goes above 13, these appear, but should go away once you test it on a real device.
 {: .prompt-warning }
