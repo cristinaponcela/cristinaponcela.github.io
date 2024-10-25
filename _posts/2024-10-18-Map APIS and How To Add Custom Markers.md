@@ -32,7 +32,7 @@ Mapbox is another popular alternative, offering beautiful visual styling and cus
 ![Desktop View](/assets/img/emoji_markers.png){: width="140vw" height="210vw" }{: .left}
 ![Desktop View](/assets/img/pics_markers.png){: width="140vw height="210vw" }{: .normal}
 ![Desktop View](/assets/img/more_pics_markers.png){: width="140vw height="210vw" }{: .normal}
-![Desktop View](/assets/img/black_pics_markers.png){: width="140vw height="210vw" }{: .right}
+![Desktop View](/assets/img/black_pics_markers.png){: width="140vw height="210vw" }{: .normal}
 
 > Warning: if you ever get the weird black lines as streets on the Emulator on flutter_google_maps, don't worry. When the zoom goes above 13, these appear, but should go away once you test it on a real device.
 {: .prompt-warning }

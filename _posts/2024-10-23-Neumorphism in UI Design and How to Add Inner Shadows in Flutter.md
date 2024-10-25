@@ -18,17 +18,7 @@ Several apps and platforms use neumorphism to create a visually soothing, user-f
 ![Desktop View](/assets/img/neumorphic-ui-2.png){: width="280vw" height="420vw" }{: .right}
 
 
-
-
-
-
-
-
-
-
-
-
-
+---
 
 ## Implementing Neumorphism in Flutter with the Neumorphic Package
 
