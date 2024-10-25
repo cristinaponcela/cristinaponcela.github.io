@@ -34,6 +34,8 @@ Mapbox is another popular alternative, offering beautiful visual styling and cus
 ![Desktop View](/assets/img/more_pics_markers.png){: width="14vw height="21vw" }
 ![Desktop View](/assets/img/black_pics_markers.png){: width="14vw height="21vw" }
 
+> Warning: if you ever get the weird black lines as streets on the Emulator on flutter_google_maps, don't worry. When the zoom goes above 13, these appear, but should go away once you test it on a real device.
+{: .prompt-warning }
 
 ## How To Add Custom Markers to Google Maps in Flutter
 
