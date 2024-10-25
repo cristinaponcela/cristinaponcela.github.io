@@ -53,7 +53,7 @@ child: Text("Press Me"),
 
 While the Neumorphic package is powerful, Flutter doesn’t have a straightforward way to add inner shadows. Inner shadows are essential for creating realistic "pressed" effects in neumorphic designs, but Flutter lacks a built-in method for this effect. Here is the workaround I usually use to achieve this effect:
 
-![Desktop View](/assets/img/inner_shadow.png){: width="280vw" height="420vw" }{: .right}
+![Desktop View](/assets/img/inner_shadow.png){: width="280vw" height="420vw" }
 
 ```dart
 // Custom widget for adding inner shadow
