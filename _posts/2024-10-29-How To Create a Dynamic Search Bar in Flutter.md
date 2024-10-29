@@ -1,10 +1,12 @@
 ---
 title: How To Create a Dynamic Search Bar in Flutter
-date: 2024-10-29 14:59:00 -500
+date: 2024-10-29 08:59:00 -500
 categories: [Flutter, gist, Efficient Functions]
 tags: [flutter, for beginners, recommendations, efficiency]
 image: "https://raw.githubusercontent.com/cristina22999/cristina22999.github.io/refs/heads/main/assets/img/search.jpeg"
 ---
+
+
 
 As you may know, Flutter is known for its intuitiveness and ease of use. One of my favourite features is the `onChanged` functionality, which lets you create dynamic and efficient user interfaces with minimal code. Particularly, I tend to use it to create search bars that update results dynamically as you type.
 
