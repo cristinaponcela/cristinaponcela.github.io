@@ -15,7 +15,7 @@ It is most commonly used on buttons, and evolved from skeumorphism to make digit
 Several apps and platforms use neumorphism to create a visually soothing, user-friendly experience. You may have already encountered such designs:
 
 ![Desktop View](/assets/img/neumorphic-ui.png){: width="280vw" height="420vw" }{: .left}
-![Desktop View](/assets/img/neumorphic-ui-2.png){: width="280vw" height="420vw" }{: .right}
+![Desktop View](/assets/img/neumorphic-ui-2.png){: width="280vw" height="420vw" }{: .normal}
 
 
 ---
