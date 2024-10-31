@@ -3,7 +3,7 @@ title: Xcode Completion vs. GitHub Copilot: Which Is Better for Improving Your C
 date: 2024-10-31 08:42:00 -500
 categories: [Swift, Xcode, GitHub Copilot, AI Tools]
 tags: [comparison, for beginners, recommendations, efficiency]
-image: "https://raw.githubusercontent.com/cristina22999/cristina22999.github.io/refs/heads/main/assets/img/XcodeForCopilot.png"
+image: "https://raw.githubusercontent.com/cristina22999/cristina22999.github.io/refs/heads/main/assets/img/CopilotForXcode.png"
 ---
 
 The deeper I dive into the software industry, the more I realize that having the right tools is just as important as being smart. Sure, you can be a computer wiz and build amazing apps, but you can get just as far if you know the right packages, the most efficient application toolkits and, most importantly, the best AI tools. And what’s more - you may even arrive at the same destination faster; in the world of coding, saving time without sacrificing quality is a huge win. 
@@ -35,34 +35,34 @@ Insert the absolute god-sent that is the GitHub handle @intitni, who last year c
 [Now alongside Swift,](https://github.blog/changelog/2024-10-29-github-copilot-code-completion-in-xcode-is-now-available-in-public-preview/) it provides code completion suggestions across multiple languages and frameworks, including Python, JavaScript, TypeScript, Ruby, Go, C#, and C++.
 
 
-1. My Experience Using Them
+## 1. My Experience Using Them
 
 I’ve very recently started to learn Swift for a project I am working on. Not gonna lie, each time I have to switch to a new language for whatever current project I’m working on is a hassle - I’m a mathematician, and as such I care about the logic, not the latest syntax that has become popular. So I don’t tend to spend much time learning the language, instead grasping the basics and using pseudo code and AIs for the rest. 
 
 This is why Xcode Completion sucks. It is only really helpful if you already have a pretty solid understanding of Swift syntax, and for me the whole point of AIs is to streamline learning and allow you to do things that were impossible to just yourself before. So don’t get me wrong, it works well as an autocomplete, but it is literally what it says on the tin. It won’t go much further than that, and you’ll be lucky if it even gets the word right, let alone the whole line with variables and the desired functionality.
 
-![Desktop View](/XcodeCompletion.mov)
+![Desktop View](/assets/img/XcodeCompletion.mov)
 
 As you can see here, it takes a full 3 characters to notice the line before a closing bracket of a function is return, and provides no further input. Genius unlocked.
 
-![Desktop View](/CopilotWorks.mov)
+![Desktop View](/assets/img/CopilotWorks.mov)
 
 Meanwhile, I have found GitHub Copilot to perform a lot better. As you can see here, I had a line and deleted it, but Copilot quickly suggests a full line with the correct variables and functionality.  The 2 lines match.
 
 That’s not even close to being all Copilot has to offer! Every time I play around I find new cool features. For example, see below Code Snippets, that gives you examples of widely used structures upon request:
 
-![Desktop View](/CodeSnippets.png)
+![Desktop View](/assets/img/CodeSnippets.png)
 
 And now onto my actual favorite feature… ChatGPT integrated in my IDE! Truly a dream come true.
 
-![Desktop View](/CopilotChatGPT.png)
+![Desktop View](/assets/img/CopilotChatGPT.png)
 
 You can add line or code specific prompts and it will give you the code you can easily and efficiently paste over, without needing to copy paste back and forth between your files and the ChatGPT app or web.
 
 Do be advised though, you will need to buy OpenAI credits for this functionality, though it is super worth it. Starting on tier 1, $5 gives you 500 requests (with a maximum of 500 Requests Per Month).
 
 
-2. A Comparison of Key Features
+## 2. A Comparison of Key Features
 
 #### Apple Completion: A Reliable Assistant with Limited Flexibility
 
@@ -73,7 +73,7 @@ Apple’s completion tool is useful for fast and accurate syntax-aware suggestio
 Copilot shines when it comes to adaptive learning. It continuously learns from the codebase you're working in and other public code it’s been trained on, making it much more versatile. Plus, because Copilot has web access, it stays current with the latest libraries, frameworks, and code patterns - far beyond what Apple’s built-in completion can offer. But you will have to pay for both Copilot and, in case you want to use the Chat Model, OpenAI credits.
 
 
-3. How GitHub Copilot Helps Improve Efficiency
+## 3. How GitHub Copilot Helps Improve Efficiency
 
 - Quick Syntax Completion: auto-fills methods, variable names, and common structures.
 
@@ -88,7 +88,7 @@ Copilot shines when it comes to adaptive learning. It continuously learns from t
 - Constantly Updated: because it learns from an online dataset, Copilot’s suggestions include recent libraries and best practices, keeping your code current.
 
 
-4. How Beginners Can Use Copilot to Boost Efficiency
+## 4. How Beginners Can Use Copilot to Boost Efficiency
 
 If you’re new to coding, both tools can be invaluable in helping you learn quickly. They helped me. Apple Completion will be particularly useful for fast learning and familiarization, as it is more syntax aware. But I recommend you go straight to Copilot; here’s how you can leverage it in your workflow:
 
@@ -101,7 +101,7 @@ If you’re new to coding, both tools can be invaluable in helping you learn qui
 * Explore Libraries and Frameworks: Copilot has a much larger scope for suggesting library functions and third-party frameworks, which can introduce you to new tools without scouring through documentation. Though reading docu is fun and will get you more involved in the community, so try not to cut it out completely.
 
 
-5. When to Use Each Tool: A Practical Guide
+## 5. When to Use Each Tool: A Practical Guide
 
 Let’s look at some scenarios to see when Apple’s completion shines and when Copilot takes the lead:
 
@@ -127,7 +127,7 @@ As a beginner, you will benefit immensely from Copilot’s “teach-by-example�
 Apple’s completion, while straightforward, doesn’t have this teaching element since it’s limited to simple syntax-based suggestions.
 
 
-5. How to Get Started
+## 6. How to Get Started
 
 And finally, let's help you leave this article hooked up to a boost in your productivity. 
 
