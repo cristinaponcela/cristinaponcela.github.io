@@ -41,7 +41,7 @@ I’ve very recently started to learn Swift for a project I am working on. Not g
 
 This is why Xcode Completion sucks. It is only really helpful if you already have a pretty solid understanding of Swift syntax, and for me the whole point of AIs is to streamline learning and allow you to do things that were impossible just by yourself before. So don’t get me wrong, it works well as an autocomplete, but it is literally what it says on the tin. It won’t go much further than that, and you’ll be lucky if it even gets the word right, let alone the whole line with variables and the desired functionality.
 
-{% include embed/video.html src='{/assets/img/XcodeCompletion.mp4}' %}
+<iframe src="/assets/img/XcodeCompletion.mp4" frameborder="0"> </iframe>
 
 As you can see here, it takes a full 3 characters to notice the line before a closing bracket of a function is return, and provides no further input. Genius unlocked.
 
