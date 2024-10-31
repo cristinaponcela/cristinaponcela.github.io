@@ -3,7 +3,7 @@ title: Xcode Completion vs. GitHub Copilot: Which Is Better for Improving Your C
 date: 2024-10-31 08:42:00 -500
 categories: [Swift, Xcode, GitHub Copilot, AI Tools]
 tags: [comparison, for beginners, recommendations, efficiency]
-image: "https://raw.githubusercontent.com/cristina22999/cristina22999.github.io/refs/heads/main/assets/img/CopilotForXcode.png"
+image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/CopilotForXcode.png"
 ---
 
 The deeper I dive into the software industry, the more I realize that having the right tools is just as important as being smart. Sure, you can be a computer wiz and build amazing apps, but you can get just as far if you know the right packages, the most efficient application toolkits and, most importantly, the best AI tools. And what’s more - you may even arrive at the same destination faster; in the world of coding, saving time without sacrificing quality is a huge win. 
@@ -41,21 +41,21 @@ I’ve very recently started to learn Swift for a project I am working on. Not g
 
 This is why Xcode Completion sucks. It is only really helpful if you already have a pretty solid understanding of Swift syntax, and for me the whole point of AIs is to streamline learning and allow you to do things that were impossible to just yourself before. So don’t get me wrong, it works well as an autocomplete, but it is literally what it says on the tin. It won’t go much further than that, and you’ll be lucky if it even gets the word right, let alone the whole line with variables and the desired functionality.
 
-![Desktop View](/assets/img/XcodeCompletion.mov)
+![Desktop View](https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/XcodeCompletion.mov)
 
 As you can see here, it takes a full 3 characters to notice the line before a closing bracket of a function is return, and provides no further input. Genius unlocked.
 
-![Desktop View](/assets/img/CopilotWorks.mov)
+![Desktop View](https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/CopilotWorks.mov)
 
 Meanwhile, I have found GitHub Copilot to perform a lot better. As you can see here, I had a line and deleted it, but Copilot quickly suggests a full line with the correct variables and functionality.  The 2 lines match.
 
 That’s not even close to being all Copilot has to offer! Every time I play around I find new cool features. For example, see below Code Snippets, that gives you examples of widely used structures upon request:
 
-![Desktop View](/assets/img/CodeSnippets.png)
+![Desktop View](https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/CodeSnippets.png)
 
 And now onto my actual favorite feature… ChatGPT integrated in my IDE! Truly a dream come true.
 
-![Desktop View](/assets/img/CopilotChatGPT.png)
+![Desktop View](https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/CopilotChatGPT.png)
 
 You can add line or code specific prompts and it will give you the code you can easily and efficiently paste over, without needing to copy paste back and forth between your files and the ChatGPT app or web.
 
