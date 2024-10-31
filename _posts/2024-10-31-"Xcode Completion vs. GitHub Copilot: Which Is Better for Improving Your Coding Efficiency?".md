@@ -45,7 +45,7 @@ This is why Xcode Completion sucks. It is only really helpful if you already hav
 
 As you can see here, it takes a full 3 characters to notice the line before a closing bracket of a function is return, and provides no further input. Genius unlocked.
 
-<iframe width="640vw" height="420vw" src="/assets/img//assets/img/CopilotWorks.mp4" frameborder="0"> </iframe>
+<iframe width="640vw" height="420vw" src="/assets/img/CopilotWorks.mp4" frameborder="0"> </iframe>
 
 Meanwhile, I have found GitHub Copilot to perform a lot better. As you can see here, I had a line and deleted it, but Copilot quickly suggests a full line with the correct variables and functionality.  The 2 lines match.
 
@@ -55,7 +55,7 @@ That’s not even close to being all Copilot has to offer! Every time I play aro
 
 And now onto my actual favorite feature… ChatGPT integrated in my IDE! Truly a dream come true.
 
-<iframe width="640vw" height="420vw" src="/assets/img/assets/img/CopilotChatGPT.mp4" frameborder="0"> </iframe>
+<iframe width="640vw" height="420vw" src="/assets/img/CopilotChatGPT.mp4" frameborder="0"> </iframe>
 
 
 You can add line or code specific prompts and it will give you the code you can easily and efficiently paste over, without needing to copy paste back and forth between your files and the ChatGPT app or web.
