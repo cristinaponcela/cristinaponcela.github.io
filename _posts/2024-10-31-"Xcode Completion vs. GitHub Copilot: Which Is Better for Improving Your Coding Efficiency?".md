@@ -92,7 +92,7 @@ Copilot shines when it comes to adaptive learning. It continuously learns from t
 
 If you’re new to coding, both tools can be invaluable in helping you learn quickly. They helped me. Apple Completion will be particularly useful for fast learning and familiarization, as it is more syntax aware. But I recommend you go straight to Copilot; here’s how you can leverage it in your workflow:
 
-* Quick Feedback Loop: every time you type, you get instant feedback. - this constant feedback will help you avoid simple errors and learn quickly.
+* Quick Feedback Loop: every time you type, you get instant feedback - this constant feedback will help you avoid simple errors and learn quickly.
 
 * Ask for Help with Prompts: dude, we live in a day and age where you can ask your code to code and it will code. It responds to natural language prompts! Stuck on a function? You can prompt it to “create a function that fetches data from an API” and let it suggest a solution.
 
