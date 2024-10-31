@@ -51,7 +51,7 @@ Meanwhile, I have found GitHub Copilot to perform a lot better. As you can see h
 
 That’s not even close to being all Copilot has to offer! Every time I play around I find new cool features. For example, see below Code Snippets, that gives you examples of widely used structures upon request:
 
-![Desktop View](/assets/img/CodeSnippets.png){: width="640vw" height="420vw" }
+![Desktop View](/assets/img/CopilotCodeSnippets.png){: width="640vw" height="420vw" }
 
 And now onto my actual favorite feature… ChatGPT integrated in my IDE! Truly a dream come true.
 
@@ -96,7 +96,7 @@ If you’re new to coding, both tools can be invaluable in helping you learn qui
 
 * Ask for Help with Prompts: dude, we live in a day and age where you can ask your code to code and it will code. It responds to natural language prompts! Stuck on a function? You can prompt it to “create a function that fetches data from an API” and let it suggest a solution.
 
-* See How Experienced Developers Code: by watching the suggestions Copilot makes, you get a front-row seat to common coding patterns and idiomatic practices. This is how I started to code back in the day, I just treated ChatGPT as my lecturer.
+* See How Experienced Developers Code: by watching the suggestions Copilot makes, you get a front-row seat to common coding patterns and idiomatic practices. This is how I started to code back in the day, I just treated ChatGPT as my lecturer. Or you can ask Copilot to add comments to everything.
 
 * Explore Libraries and Frameworks: Copilot has a much larger scope for suggesting library functions and third-party frameworks, which can introduce you to new tools without scouring through documentation. Though reading docu is fun and will get you more involved in the community, so try not to cut it out completely.
 
