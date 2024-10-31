@@ -39,7 +39,7 @@ Insert the absolute god-sent that is the GitHub handle @intitni, who last year c
 
 I’ve very recently started to learn Swift for a project I am working on. Not gonna lie, each time I have to switch to a new language for whatever current project I’m working on is a hassle - I’m a mathematician, and as such I care about the logic, not the latest syntax that has become popular. So I don’t tend to spend much time learning the language, instead grasping the basics and using pseudo code and AIs for the rest. 
 
-This is why Xcode Completion sucks. It is only really helpful if you already have a pretty solid understanding of Swift syntax, and for me the whole point of AIs is to streamline learning and allow you to do things that were impossible to just yourself before. So don’t get me wrong, it works well as an autocomplete, but it is literally what it says on the tin. It won’t go much further than that, and you’ll be lucky if it even gets the word right, let alone the whole line with variables and the desired functionality.
+This is why Xcode Completion sucks. It is only really helpful if you already have a pretty solid understanding of Swift syntax, and for me the whole point of AIs is to streamline learning and allow you to do things that were impossible just by yourself before. So don’t get me wrong, it works well as an autocomplete, but it is literally what it says on the tin. It won’t go much further than that, and you’ll be lucky if it even gets the word right, let alone the whole line with variables and the desired functionality.
 
 ![Desktop View](/assets/img/XcodeCompletion.mov){: width="640vw" height="420vw" }
 
