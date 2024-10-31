@@ -41,11 +41,11 @@ I’ve very recently started to learn Swift for a project I am working on. Not g
 
 This is why Xcode Completion sucks. It is only really helpful if you already have a pretty solid understanding of Swift syntax, and for me the whole point of AIs is to streamline learning and allow you to do things that were impossible just by yourself before. So don’t get me wrong, it works well as an autocomplete, but it is literally what it says on the tin. It won’t go much further than that, and you’ll be lucky if it even gets the word right, let alone the whole line with variables and the desired functionality.
 
-<iframe width="300vw" src="/assets/img/XcodeCompletion.mp4" frameborder="0"> </iframe>
+<iframe width="250%" height="520%" src="/assets/img/XcodeCompletion.mp4" frameborder="0"> </iframe>
 
 As you can see here, it takes a full 3 characters to notice the line before a closing bracket of a function is return, and provides no further input. Genius unlocked.
 
-<iframe width="300vw" src="/assets/img/CopilotWorks.mp4" frameborder="0"> </iframe>
+<iframe width="250%" height="540%" src="/assets/img/CopilotWorks.mp4" frameborder="0"> </iframe>
 
 Meanwhile, I have found GitHub Copilot to perform a lot better. As you can see here, I had a line and deleted it, but Copilot quickly suggests a full line with the correct variables and functionality.  The 2 lines match.
 
@@ -55,7 +55,7 @@ That’s not even close to being all Copilot has to offer! Every time I play aro
 
 And now onto my actual favorite feature… ChatGPT integrated in my IDE! Truly a dream come true.
 
-<iframe width="300vw" src="/assets/img/CopilotChatGPT.mp4" frameborder="0"> </iframe>
+<iframe width="250%" height="540%" src="/assets/img/CopilotChatGPT.mp4" frameborder="0"> </iframe>
 
 
 You can add line or code specific prompts and it will give you the code you can easily and efficiently paste over, without needing to copy paste back and forth between your files and the ChatGPT app or web.
