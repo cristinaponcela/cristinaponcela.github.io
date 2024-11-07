@@ -8,7 +8,7 @@ image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github
 
 The deeper I dive into the software industry, the more I realize that having the right tools is just as important as being smart. Sure, you can be a computer wiz and build amazing apps, but you can get just as far if you know the right packages, the most efficient application toolkits and, most importantly, the best AI tools. And what’s more - you may even arrive at the same destination faster; in the world of coding, saving time without sacrificing quality is a huge win. 
 
-This post should show a thorough (and biased) comparison of the 2 tools that have been using a lot recently in Xcode: Completion and GitHub Copilot. 
+I've recently taken up a new project - I'm building an app natively in Swift, in which I have a total of zero experience. But I am a self-taught coder; getting my hands dirty and learning on-the-go is my passion, especially when I get to leverage AI tools. As such, I've spet the past week thoroughly playing with 2 tools in Xcode: Completion and GitHub Copilot. Both have definitely helped me get up to speed with Swift very fast, but I have quickly found there are key differences in their impact to your learning curve. This post should show a thorough (and biased) comparison.
 
 I mainly use Copilot for Xcode hooked up to ChatGPT using an OpenAI API key. This allows me to both enjoy inline code autocompletion and prompt generative responses to directly insert into my code. Lovely stuff.
 
@@ -138,4 +138,9 @@ But if you’re a visual learner (read: “lazy”) like me and prefer a good ol
 
 
 
-Also, happy Halloween! Hope you enjoyed the spooky Xcode recs.
+
+##### Bonus
+
+I've also started plating around with [Cursor](https://dimillian.medium.com/how-to-use-cursor-for-ios-development-54b912c23941) recently, because I take [@Dimillian](https://x.com/dimillian)'s recommendations seriously. More opinions coming on that soon. In the meantime, if you don't follow Dimillian already go do that, and if you get the chance do read through his [IceCubesApp docu](https://github.com/Dimillian/IceCubesApp). It's been one of the resources that has helped me learn Swift the fastest, that's how good this guy is.
+
+
