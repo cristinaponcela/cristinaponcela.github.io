@@ -103,7 +103,7 @@ If you’re new to coding, both tools can be invaluable in helping you learn qui
 
 ![Desktop View](/assets/img/ErrorsAndChatGPT.png.png){: .normal}
 
-You can also become extra efficient thanks to the fact that Xcode makes errors show up as you code, no need to wait for running the code. So you can have the errors window open on the led=ft, ChatGPT on the right, and watch your code between the 2 until a working version makes it to the center.
+You can also become extra efficient thanks to Xcode showing errors as you go along, without neeing to wait to run the code. So you can have the errors window open on the left, ChatGPT on the right, and watch your code fly between the 2 until a working version makes it to the center.
 
 ## 5. When to Use Each Tool: A Practical Guide
 
