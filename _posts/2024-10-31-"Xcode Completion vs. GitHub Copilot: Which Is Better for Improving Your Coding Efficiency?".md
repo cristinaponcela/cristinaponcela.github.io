@@ -101,6 +101,9 @@ If you’re new to coding, both tools can be invaluable in helping you learn qui
 
 * Explore Libraries and Frameworks: Copilot has a much larger scope for suggesting library functions and third-party frameworks, which can introduce you to new tools without scouring through documentation. Though reading docu is fun and will get you more involved in the community, so try not to cut it out completely.
 
+![Desktop View](/assets/img/ErrorsAndChatGPT.png.png){: .normal}
+
+You can also become extra efficient thanks to the fact that Xcode makes errors show up as you code, no need to wait for running the code. So you can have the errors window open on the led=ft, ChatGPT on the right, and watch your code between the 2 until a working version makes it to the center.
 
 ## 5. When to Use Each Tool: A Practical Guide
 
