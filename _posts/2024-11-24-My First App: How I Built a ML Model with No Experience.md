@@ -130,3 +130,5 @@ A considerable improvement; the first epoch already had, presumably, and accurac
 32k images later (using data augmentation to keep it as uniform as possible), I am happy to say I got the model to an astounding val_accuracy of 99% (and it took a full 10 days to train, I believe on AWS hahaha) for 23 categories. Of course, we should always be weary of val_accuracy as it may not be representative of performance due to underlying issues like uniformity or model architecture, but upon testing, ClothingCAT has been performing notoriously well.
 
 Also, as a little extra bonus for all of our hard work, we recently got nominated by [Tech South West Awards 2024 as Top 5 Best Application of AI!](https://www.linkedin.com/posts/tech-south-west_techsouthwest-aiinnovation-futuretech-activity-7257052845319897089-5AL4?utm_source=share&utm_medium=member_desktop)
+
+![Desktop View](/assets/img/ClothingCAT/Top5AI.jpeg){: .normal}
