@@ -56,4 +56,3 @@ final avatarProvider =
 ```
 
 Thus, you get rid of 3 of the hardest aspects of building an app: the database, the backend (no need for a server at all with Firebase), and the state management. Also! Firebase handles authentication for you, and you can also use it's Firebase Cloud Messaging (FCM) for notifications (which we definitely took advantage of too).This means you can essentially have a tech startup with an app as long as you know some frontend! Crazy world we live in.
-
