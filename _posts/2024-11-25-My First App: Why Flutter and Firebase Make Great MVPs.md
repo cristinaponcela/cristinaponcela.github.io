@@ -6,7 +6,7 @@ tags: [for beginners, recommendations, efficiency]
 image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/ClothingCAT/Swerv-app.png"
 ---
 
-We're back with another Weaving Change/ Swerv post! I'm really excited to finally be writing these - this project was definitely pivotal in my career. I arrived with no experience and barely having a clue of how to code, and I left as a Software Engineer. As I mentioned in the previous post, I spent 9 months working on this project. Out of these, the first 2.5 were spent on ClothingCAT (the ML model), then 2.5 were spent off since I was sitting my final university exams and then went on a sick trip around China and Japan (yey!), and the final 4 were spent as a Full-Stack Developer getting the application ready for the launch on November 16th.
+We're back with another Weaving Change/ Swerv post! I'm really excited to finally be writing these - this project was definitely pivotal in my career. I arrived with no experience and barely having a clue of how to code, and I left as a Software Engineer. As I mentioned in the [previous pos](https://www.cristinaponcela.com/posts/My-First-App-How-I-Built-a-ML-Model-with-No-Experience/), I spent 9 months working on this project. Out of these, the first 2.5 were spent on ClothingCAT (the ML model), then 2.5 were spent off since I was sitting my final university exams and then went on a sick trip around China and Japan (yey!), and the final 4 were spent as a Full-Stack Developer getting the application ready for the launch on November 16th.
 
 This app was definitely a challenge, mainly because of how small the team was (I spent most of the time as the main developer, though I could always ask for support when needed), and because of how rich the range of functionalities we offer is. 
 
@@ -26,13 +26,13 @@ This is how you would add something to Firebase storage:
 
 ```dart
 // Reference to the destination path in the user's storage
-        final userAvatarRef = storage.ref('Users/$uid/Avatar/avatar.svg');
+final userAvatarRef = storage.ref('Users/$uid/Avatar/avatar.svg');
 
-        // Upload the SVG data to the user's avatar location
-        await userAvatarRef.putData(
-          avatarBytes,
-          SettableMetadata(contentType: 'image/svg+xml'),
-        );
+// Upload the SVG data to the user's avatar location
+await userAvatarRef.putData(
+  avatarBytes,
+  SettableMetadata(contentType: 'image/svg+xml'),
+);
 ```
 
 And how you would retrieve it:
