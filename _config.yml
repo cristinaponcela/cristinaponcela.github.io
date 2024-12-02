@@ -140,7 +140,7 @@ assets:
     env: # [development | production]
 
 pwa:
-  enabled: true # The option for PWA feature (installable)
+  enabled: false # The option for PWA feature (installable)
   cache:
     enabled: false # The option for PWA offline cache
     # Paths defined here will be excluded from the PWA cache.
@@ -152,7 +152,7 @@ pwa:
 paginate: 10
 
 # The base URL of your site
-baseurl: ""
+baseurl: "htpp://cristinaponcela.com"
 
 # ------------ The following options are not recommended to be modified ------------------
 
