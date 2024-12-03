@@ -24,9 +24,10 @@ I love coding and am a bit of a workaholic, so the actual process of learning a 
 
 The first step was getting these set up - the very blog you're reading is a part of my personal website (duh), and I've tried my best to add regular updates on whatever I'm working on. Counting this one, I've posted 10 articles in these 8 weeks, and uploaded 3 [gists](https://gist.github.com/cristinaponcela). 
 
-![Desktop View](/assets/img/my-blog.png){: .left}
+![Desktop View](/assets/img/my-blog.png){: .normal}
 
-![Desktop View](/assets/img/gist.png){: .right}
+
+![Desktop View](/assets/img/gist.png){: .normal}
 
 One of my blog posts, the one about [Xcode Completion vs. GitHub Copilot](https://www.cristinaponcela.com/posts/Xcode-Completion-vs.-GitHub-Copilot-Which-Is-Better-for-Improving-Your-Coding-Efficiency/), was referenced in an [issue of iOS Dev Weekly](https://iosdevweekly.com/issues/686#start)! This is a great way to get discovered by tech professionals, and I am super grateful for [Dave Verwer](https://x.com/daveverwer) for considering my work. 
 
