@@ -53,15 +53,15 @@ But since this felt a bit bare for an app, I decided to kill two birds with one 
 
 HabitTracker allows you to add events and friends to a calendar, with a UI very similar to that of the Apple Calendar but way more intuitive and easy to use. For example, you can type event names directly into the Calendar View, as each hour is a text field. You can also easily change to Weekly and Monthly Views by using two fingers to zoom out. Frequent events and calls with your friends then get automatically added, and you get reeminded so you're held accountable for maintaining your habits. In all three of the Daily, Weekly and Monthly Views, you can intuitively see how your work/life balance is doing by looking at the charts, separated by the categories you create.
 
-![Desktop View](/assets/img/HabitTracker/DailyView.png){: .left}
+![Desktop View](/assets/img/HabitTracker/DailyView.png){: .left, h: "200px"}
 
-![Desktop View](/assets/img/HabitTracker/DailyView.png){: .center}
+![Desktop View](/assets/img/HabitTracker/DailyView.png){: .center, h: "200px"}
 
-![Desktop View](/assets/img/HabitTracker/DailyView.png){: .right}
+![Desktop View](/assets/img/HabitTracker/DailyView.png){: .right, h: "200px"}
 
-![Desktop View](/assets/img/HabitTracker/AddFriend.png){: .left}
+![Desktop View](/assets/img/HabitTracker/AddFriend.png){: .left, h: "200px"}
 
-![Desktop View](/assets/img/HabitTracker/ScheduledCall.png){: .right}
+![Desktop View](/assets/img/HabitTracker/ScheduledCall.png){: .right, h: "200px"}
 
 
 As all fun projects are, this was incredibly annoying at times. I had many issues when dealing with the database, and I quickly met my nemesis: "Error: the mothods are not reentrant". 
