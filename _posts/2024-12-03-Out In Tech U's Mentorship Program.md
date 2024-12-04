@@ -53,4 +53,61 @@ But since this felt a bit bare for an app, I decided to kill two birds with one 
 
 HabitTracker allows you to add events and friends to a calendar, with a UI very similar to that of the Apple Calendar but way more intuitive and easy to use. For example, you can type event names directly into the Calendar View, as each hour is a text field. You can also easily change to Weekly and Monthly Views by using two fingers to zoom out. Frequent events and calls with your friends then get automatically added, and you get reeminded so you're held accountable for maintaining your habits. In all three of the Daily, Weekly and Monthly Views, you can intuitively see how your work/life balance is doing by looking at the charts, separated by the categories you create.
 
+![Desktop View](/assets/img/HabitTracker/DailyView.png){: .left, w:"30vw"}
+
+![Desktop View](/assets/img/HabitTracker/DailyView.png){: .center, w:"30vw"}
+
+![Desktop View](/assets/img/HabitTracker/DailyView.png){: .right, w:"30vw"}
+
+![Desktop View](/assets/img/HabitTracker/AddFriend.png){: .left, w:"45vw"}
+
+![Desktop View](/assets/img/HabitTracker/ScheduledCall.png){: .right, w:"45vw"}
+
+
+As all fun projects are, this was incredibly annoying at times. I had many issues when dealing with the database, and I quickly met my nemesis: "Error: the mothods are not reentrant". 
+
+A lot of big words incoming, but I swear it's easier than it sounds:
+
+Imagine you have a function that tries to update a shared resource (like a variable, file, or database). If the function is called again before the first call finishes, it might lead to unexpected behavior (e.g., the resource getting overwritten or corrupted). This is called *reentrancy* — when the function enters itself again before it finishes executing. 
+
+SwiftUI avoids this by structuring code with *single transaction models*, ensuring that operations like database writes happen *sequentially*. By passing the database reference (db) between parent and child functions, SwiftUI prevents reentrancy by ensuring that tasks don’t overlap. 
+
+This synchronization ensures only one task modifies shared resources at a time, preserving data integrity and preventing race conditions. SwiftUI's approach keeps state updates ordered, making the app predictable and stable.
+
+I discovered this the hard way. Thinking I was about 2 days away from release, I added the call scheduling function within the main fetching and displaying function, as the last step for events and calls to be automatically added and displayed. Everything broke.
+
+It turns out, you can't add nested `db.write` or `db.read` read operations withought initializing a `dbQueue` variable, and then passing the `db: Database` variable to all child functions to ensure you are performing operations on the correct (in this case, the only) thread. This is because SQLite (which I used with GRDB) is not thread-safe by default for read/write operations. The structure should be as follows:
+
+```swift
+private func parentFunction() {
+    do {
+        // Perform the write block
+        try DatabaseManager.shared.dbQueue.write { db in
+            // Clear the events data before fetching new ones
+            eventsByDate.removeAll()
+
+            // Call child functions with the db instance
+            try childFunction1(db: db)
+            try childFunction2(db: db)
+            try childFunction3(db: db)
+        }
+    } catch {
+        print("Error performing database operations: \(error)")
+    }
+}
+```
+
+```swift
+private func childFunctionN(db: Database) throws {
+    for date in daysInMonth {
+        do {
+            let events = try fetchEvents(for: date, db: db)
+            eventsByDate[date] = events
+        } catch {
+            print("Error fetching events for date \(date): \(error)")
+            throw error // Propagate the error back to the parent function
+        }
+    }
+}
+```
 
