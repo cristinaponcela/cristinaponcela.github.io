@@ -56,15 +56,15 @@ But since this felt a bit bare for an app, I decided to kill two birds with one 
 
 HabitTracker allows you to add events and friends to a calendar, with a UI very similar to that of the Apple Calendar but way more intuitive and easy to use. For example, you can type event names directly into the Calendar View, as each hour is a text field. You can also easily change to Weekly and Monthly Views by using two fingers to zoom out. Frequent events and calls with your friends then get automatically added, and you get reeminded so you're held accountable for maintaining your habits. In all three of the Daily, Weekly and Monthly Views, you can intuitively see how your work/life balance is doing by looking at the charts, separated by the categories you create.
 
-![Desktop View](/assets/img/HabitTracker/DailyView.png){: width="240vw" height="440vw" }{: .left}
+![Desktop View](/assets/img/HabitTracker/DailyView.png){: width="240vw" height="440vw" }{: .normal}
 
 ![Desktop View](/assets/img/HabitTracker/WeeklyView.png){: width="240vw" height="440vw" }{: .normal}
 
-![Desktop View](/assets/img/HabitTracker/MonthlyView.png){: width="240vw" height="440vw" }{: .right}
+![Desktop View](/assets/img/HabitTracker/MonthlyView.png){: width="240vw" height="440vw" }{: .normal}
 
-![Desktop View](/assets/img/HabitTracker/AddFriend.png){: width="240vw" height="440vw" }{: .left}
+![Desktop View](/assets/img/HabitTracker/AddFriend.png){: width="240vw" height="440vw" }{: .normal}
 
-![Desktop View](/assets/img/HabitTracker/ScheduledCall.png){: width="240vw" height="440vw" }{: .right}
+![Desktop View](/assets/img/HabitTracker/ScheduledCall.png){: width="240vw" height="440vw" }{: .normal}
 
 <div style="clear: both;"></div>
 
