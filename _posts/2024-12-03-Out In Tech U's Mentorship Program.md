@@ -47,6 +47,9 @@ Peter has a background in iOS development, and as such he recommended I used the
 
 Before joining the program, I had never used SwiftUI or [GRDB](https://github.com/groue/GRDB.swift) — a super useful Swift database library. However, with Peter's guidance, I have built an app called HabitTracker, which helps users manage their daily habits in an efficient and balanced way.
 
+> You can find the full source code in my GitHub repo [HabitTracker](https://github.com/cristinaponcela/HabitTracker)!
+{: .prompt-tip }
+
 This idea came about because I work remotely and travel a lot, so keeping up with friends has been a challenge. I ended up creating a llist of friends that I wanted to call regularly - since I had around 30 people on this list, this made for a perfect monthly schedule to have a monthly call with each friend. The more I explained this to my friends, the more they kept saying it was a great idea and they had started doing the same. And as any geeky developer does, I decided to automate it.
 
 But since this felt a bit bare for an app, I decided to kill two birds with one stone and solve my second biggest problem due to this lifestlye - keeping my work/life balance in check. 
@@ -64,7 +67,10 @@ HabitTracker allows you to add events and friends to a calendar, with a UI very 
 ![Desktop View](/assets/img/HabitTracker/ScheduledCall.png){: .right, h: "200px"}
 
 
-As all fun projects are, this was incredibly annoying at times. I had many issues when dealing with the database, and I quickly met my nemesis: "Error: the mothods are not reentrant". 
+
+## GRDB's Thread Safety
+
+As all fun projects are, this was incredibly annoying at times. I had many issues when dealing with the database, and I quickly met my nemeses: "Fatal error: Database methods are not reentrant" and "Fatal error: Database was not used on the correct thread.". 
 
 A lot of big words incoming, but I swear it's easier than it sounds:
 
@@ -111,3 +117,109 @@ private func childFunctionN(db: Database) throws {
 }
 ```
 
+## GRDB's Database Observers
+
+And my personal favorite feature of GRDB: you can declare a `@StateObject` variable to be a `DatabaseObserver`, so that the UI automatically updates and displays changes as they occur in the database.
+
+For example, we would start by defining the model of the type of data we want to observe, which should correspond to the database table we will observe:
+
+```swift
+import GRDB
+
+struct Task: Identifiable, Codable {
+    var id: Int64
+    var name: String
+    var isComplete: Bool
+}
+
+extension Task {
+    static let databaseTableName = "tasks"
+}
+```
+
+Then, we create the `DatabaseObserver` class:
+
+```swift
+import SwiftUI
+import GRDB
+
+class DatabaseObserver: ObservableObject {
+    @Published var tasks: [Task] = []
+    
+    private var dbQueue: DatabaseQueue
+    
+    init(dbQueue: DatabaseQueue) {
+        self.dbQueue = dbQueue
+        fetchTasks()
+    }
+    
+    func fetchTasks() {
+        do {
+            try dbQueue.read { db in
+                // Fetch tasks from the database
+                self.tasks = try Task.fetchAll(db)
+            }
+        } catch {
+            print("Error fetching tasks: \(error)")
+        }
+    }
+    
+    // Add more methods here for inserting, updating, or deleting tasks
+    func addTask(name: String) {
+        do {
+            try dbQueue.write { db in
+                let task = Task(id: 0, name: name, isComplete: false)
+                try task.insert(db)
+            }
+            fetchTasks() // Reload tasks after adding one
+        } catch {
+            print("Error adding task: \(error)")
+        }
+    }
+}
+```
+
+And finally, we call this in the View or wherever in the UI we want changes to automatically display:
+
+```swift
+import SwiftUI
+
+struct TaskListView: View {
+    @StateObject private var databaseObserver = DatabaseObserver(dbQueue: DatabaseManager.shared.dbQueue)
+    
+    var body: some View {
+        VStack {
+            List(databaseObserver.tasks) { task in
+                HStack {
+                    Text(task.name)
+                    Spacer()
+                    if task.isComplete {
+                        Image(systemName: "checkmark")
+                    }
+                }
+            }
+            
+            Button(action: {
+                // Add a new task when button is clicked
+                databaseObserver.addTask(name: "New Task")
+            }) {
+                Text("Add Task")
+            }
+            .padding()
+        }
+        .onAppear {
+            // Fetch tasks when the view appears
+            databaseObserver.fetchTasks()
+        }
+    }
+}
+```
+
+And that's a wrap! No need to set up any more interactions with the database!
+
+
+## Bonus
+
+I have been trying out different IDEs throughout the program, changing environment every 2 weeks or so. I used VSC, Xcode with Xcode Completion, Xcode with GitHub Copilot, and now I'm really enjoying Windsurf and it's in-built AI Cascade. I find it to be my favorite inline AI suggester yet! I will write more on this when I get around to tryig Cursor too, which is next on the list B) 
+
+This mentorship was an excellent exercise in learning, debugging, using docu and StackOverflow, and essentially doing what a developer does every day. It was an extremely entertaining and challenging project, and I feel like I have learned in 8 weeks what could take months or years thanks to Peter's expert guidance. I'm looking forward to working with Peter again in the future to continue learning and growing as a developer.
