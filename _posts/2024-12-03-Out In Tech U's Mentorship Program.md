@@ -60,7 +60,7 @@ HabitTracker allows you to add events and friends to a calendar, with a UI very 
 
 ![Desktop View](/assets/img/HabitTracker/WeeklyView.png){: width="240vw" height="440vw" }{: .normal}
 
-![Desktop View](/assets/img/HabitTracker/MonthlyView.png){: width="240vw" height="440vw" }{: .normal}
+![Desktop View](/assets/img/HabitTracker/MonthlyView.png){: width="240vw" height="440vw" }{: .right}
 
 ![Desktop View](/assets/img/HabitTracker/AddFriend.png){: width="240vw" height="440vw" }{: .left}
 
