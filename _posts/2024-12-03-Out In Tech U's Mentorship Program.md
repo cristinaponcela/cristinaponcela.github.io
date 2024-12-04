@@ -66,6 +66,8 @@ HabitTracker allows you to add events and friends to a calendar, with a UI very 
 
 ![Desktop View](/assets/img/HabitTracker/ScheduledCall.png){: width="240vw" height="440vw" }{: .right}
 
+<div style="clear: both;"></div>
+
 
 
 ## GRDB's Thread Safety
