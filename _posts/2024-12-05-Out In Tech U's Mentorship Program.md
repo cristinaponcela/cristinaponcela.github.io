@@ -1,6 +1,6 @@
 ---
 title: "Out In Tech U's Mentorship Program"
-date: 2024-12-03 08:42:00 -500
+date: 2024-12-05 08:42:00 -500
 categories: [OiT, SwiftUI, Blog, MVPs]
 tags: [for beginners, recommendations, efficiency, my journey]
 image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/out-in-tech.jpg"
