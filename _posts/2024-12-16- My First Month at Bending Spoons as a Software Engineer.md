@@ -3,7 +3,7 @@ title: "My First Month at Bending Spoons as a Software Engineer"
 date: 2024-12-16 08:42:00 -500
 categories: [ Bending Spoons, Listing, Unit Testing, Typescript]
 tags: [employment, RxJS, Redux, my journey, ESLint, Jest]
-image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/Bending-Spoons.jpg"
+image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/BendingSpoons.jpg"
 ---
 
 Bending Spoons has been making a lot of noise lately, both for its profitable acquisitions and unusual nature. As of today, I have completed my first month working at this so-called Italian unicorn as a Software Engineer, and wanted to take a moment to break down how a company as big as Bending Spoons gets its engineers up to speed and ready to push code to products used by millions in weeks.
