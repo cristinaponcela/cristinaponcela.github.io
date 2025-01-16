@@ -1,7 +1,7 @@
 ---
 title: "My First Month at Bending Spoons as a Software Engineer"
 date: 2024-12-16 08:42:00 -500
-categories: [ Bending Spoons, Listing, Unit Testing, Typescript]
+categories: [ Bending Spoons, Linting, Unit Testing, Typescript]
 tags: [employment, RxJS, Redux, my journey, ESLint, Jest]
 image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/BendingSpoons.jpg"
 ---
