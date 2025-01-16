@@ -9,7 +9,7 @@ image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github
 
 ## Learning TypeScript in 2 Months: What Worked for Me
 
-Learning TypeScript has been an interesting experience (read "b*"). It's a superset of JavaScript, so previous experience with it helped the transition be smoother, but there are still a lot of aspects that, once learned, prove to be very advantageous above JS. This isn’t a beginner’s guide, but rather a collection of tips, observations, and examples that I found interesting while learning TypeScript, and may resonate with you if you have tamed this beast too.
+Learning TypeScript has been an interesting experience (read "b*tch"). It's a superset of JavaScript, so previous experience with it helped the transition be smoother, but there are still a lot of aspects that, once learned, prove to be very advantageous above JS. This isn’t a beginner’s guide, but rather a collection of tips, observations, and examples that I found interesting while learning TypeScript, and may resonate with you if you have tamed this beast too.
 
 
 ### Promises and Async/Await
