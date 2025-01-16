@@ -3,7 +3,7 @@ title: "TypeScript: From Zero to Production in 60 Days"
 date: 2025-01-11 08:42:00 -500
 categories: [ Bending Spoons, TypeScript]
 tags: [production, RxJS, Redux, my journey]
-image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/typescript-journey.jpg"
+image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/typescript-journey.png"
 ---
 
 
