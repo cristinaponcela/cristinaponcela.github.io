@@ -3,7 +3,7 @@ title: "CursorAI and Other Tempting Alternatives"
 date: 2025-02-11 08:42:00 -500
 categories: [ Bending Spoons, TypeScript]
 tags: [production, RxJS, Redux, my journey]
-image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/ides/windsurfVScursor.jpeg"
+image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/ides/windsurfVScursor.jpg"
 ---
 
 # What's the best AI integration for an IDE?
