@@ -43,7 +43,7 @@ Also as Cursor, they come with bougee themes (background colours) for your IDE. 
 
 But perhaps the best feature of Windsurf, it has _really_ good inline completion, like Cursor, but one an autocompletion is added (pressing tab), it then produces another autocompletion based on the new input, and so on. Super useful when writing a blog like this, since it will give me full code blocks as examples to the concept I'm trying to explain by pressing tab a few times.
 
-<iframe class="embed-video" loading="lazy" src="/assets/img/ides/windsurf-multiple-autocompletes.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<iframe class="embed-video" loading="lazy" src="/assets/img/ides/windsurf-multiple-autocompletions.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
 Windsurf is quite good at understanding context, and will take previous code in your file to predict the next autocompletion. For example, and because you're going to have a blast seeing the behind the scenes of how these articles are written, look at how it autogenerates lines for this blog:
 
