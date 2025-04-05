@@ -68,15 +68,17 @@ And all was good and well, and we released both experiments.
 
 ## Results
 
-As you can see, not major changes. Both experiments were pretty minor from Product’s side (kudos to AI for the new model, no small feat. 
+As you can see, not major changes. Both experiments were pretty minor from Product’s side (kudos to AI for the new model, no small feat!). 
 
 Shockingly in comparison to the effort’s size, these changes had an excellent result: 
 
-Higher adoption among users:
-19.7% of subscribed users, and 16.6% of converted users, completing a broadcast tapped "Generate AI Clips".
+#### Higher adoption among users:
 
-The modal significantly increased interaction:
-Tap on "Generate Clips": 5x higher for all users and 7x higher for converted users.
-AI Clips downloads: 4x higher for all users and converted users.
+- 19.7% of subscribed users, and 16.6% of converted users, completing a broadcast tapped "Generate AI Clips".
+
+#### The modal significantly increased interaction:
+
+- Tap on "Generate Clips": 5x higher for all users and 7x higher for converted users.
+- AI Clips downloads were 4x higher for all users and converted users.
 
 The lesson I learned here: sometimes, the smallest changes, when well placed and with a clear impact in mind, can have the biggest outcomes.
