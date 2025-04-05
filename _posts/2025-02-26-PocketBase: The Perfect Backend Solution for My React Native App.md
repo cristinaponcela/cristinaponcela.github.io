@@ -37,7 +37,7 @@ cristinaponcela@Cristinas-MacBook-Air NomadSpot % ./pocketbase serve
 
 Spoiler, it does serve.
 
-3. Access the admin UI at localhost:8090
+3\. Access the admin UI at localhost:8090
 
 That's it! No complex configuration files, no dependency hell, just a single executable ready to serve your app. And a cute UI at the port!
 
@@ -49,11 +49,11 @@ That's it! No complex configuration files, no dependency hell, just a single exe
 I don’t think I know a single developer that builds auth from scratch for your usual app. Fear not! PocketBase provides a complete authentication system out of the box (pretty bare minimum if we are going to pick it as a solution, but still, it is so easy to set up and works like a charm).
 
 It supports:
-• Email/password authentication
-• OAuth providers
-• Custom authentication flows
-• Password reset functionality
-• Email verification
+- Email/password authentication
+- OAuth providers
+- Custom authentication flows
+- Password reset functionality
+- Email verification
 
 Hours of senseless development saved, happy developer.
 
@@ -91,7 +91,7 @@ I confess, I have been spoiled by Bending Spoons - at StreamYard, we have the be
 1. Start PocketBase: ./pocketbase serve
 2. Start React Native: npx expo start
 
-This minimalist approach keeps my development process clean and focused. No need to manage multiple terminal windows running different services or remember complex command combinations (or rather copy/paste them from the READ.me lol).
+This minimalist approach keeps my development process clean and focused. No need to manage multiple terminal windows running different services or remember complex command combinations (or rather copy/paste them from the README lol).
 
 
 ## Scalability: Starting Small, Ready to Grow
@@ -120,11 +120,11 @@ Before settling on PocketBase, I of course researched a couple popular alternati
 Supabase is another excellent backend-as-a-service option that many of my colleagues religiously use for client projects. Really, they never use anything else. 
 
 It offers:
-• PostgreSQL database (more powerful than PocketBase's SQLite)
-• Real-time subscriptions
-• Row-level security
-• Storage solutions
-• Excellent dashboard UI
+- PostgreSQL database (more powerful than PocketBase's SQLite)
+- Real-time subscriptions
+- Row-level security
+- Storage solutions
+- Excellent dashboard UI
 
 While Supabase is undoubtedly powerful, I found PocketBase's simplicity more appealing for my specific use case. Supabase requires more configuration and has a steeper learning curve. The PostgreSQL foundation makes it more suitable for complex data relationships and larger scale applications, but this power comes with added complexity.
 
@@ -133,15 +133,15 @@ My colleagues who use Supabase for client work love it, but I suspect PocketBase
 
 ### Firebase
 
-Firebase is the veteran in this space, and I have recommended it in the past too. I still think it is amazing for small-scale development especially, but scalability and costs are it’s biggest weaknesses when compared to PocketBase. As a newly full-fledged adult, I have to think about these too :( womp womp.
+Firebase is the veteran in this space, and I have recommended it in the past too. I still think it is amazing for small-scale development especially, but scalability and costs are its biggest weaknesses when compared to PocketBase. As a newly full-fledged adult, I have to think about these too :( womp womp.
 
 It offers:
-• NoSQL database (and now also a SQL option)
-• Authentication
-• Cloud functions
-• Analytics
-• Crash reporting
-• Push notifications
+- NoSQL database (and now also a SQL option)
+- Authentication
+- Cloud functions
+- Analytics
+- Crash reporting
+- Push notifications
 
 Its pricing model is… very not great when you scale. While the free tier is generous, costs can escalate quickly once you exceed those limits. Many developers have war stories about unexpected Firebase bills when their apps gained traction.
 
