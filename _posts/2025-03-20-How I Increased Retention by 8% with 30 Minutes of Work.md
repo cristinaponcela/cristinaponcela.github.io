@@ -3,7 +3,7 @@ title: "How I Increased Retention by 8% with 30 Minutes of Work"
 date: 2025-03-20 08:42:00 -500
 categories: [ StreamYard, A/B Testing]
 tags: [production, efficiency, my journey]
-image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/StreamYard/AddDestinationButton/AddDestinationButton.png"
+image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/StreamYard/AddDestinationButton/AddDestinationButtons.png"
 ---
 
 ## How I Increased Retention by 8% with 30 Minutes of Work
