@@ -1,12 +1,12 @@
 ---
-title: "How I Increased Retention by 8% with 30 Minutes of Work"
+title: "How I Increased StreamYard's Retention by 8% with 30 Minutes of Work"
 date: 2025-03-20 08:42:00 -500
-categories: [ StreamYard, A/B Testing]
+categories: [StreamYard, A/B Testing]
 tags: [production, efficiency, my journey]
 image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/StreamYard/AddDestinationButton/AddDestinationButtons.png"
 ---
 
-## How I Increased Retention by 8% with 30 Minutes of Work
+## How I Increased StreamYard's Retention by 8% with 30 Minutes of Work
 
 Last time, I spoke about the two new approaches we tried to decide which functionality additions to prioritize:
 
