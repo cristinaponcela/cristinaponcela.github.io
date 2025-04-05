@@ -3,7 +3,7 @@ title: "How Small Changes Boost Revenue"
 date: 2025-03-03 08:42:00 -500
 categories: [ StreamYard, A/B Testing]
 tags: [production, efficiency, my journey]
-image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/StreamYard/ai-clips/ai-announcement-modal.png"
+image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/pocketbase-banner.png"
 ---
 
 ## How Small Changes Boost Revenue
