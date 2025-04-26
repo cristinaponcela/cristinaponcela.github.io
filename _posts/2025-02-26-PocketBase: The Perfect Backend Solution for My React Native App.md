@@ -6,8 +6,6 @@ tags: [production, backend, database, my journey]
 image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/pocketbase-banner.png"
 ---
 
-## PocketBase: The Perfect Backend Solution for My React Native App
-
 I recently started a new personal project, and since I plan it to be quite small scale at least for now, I wanted to find a cheap, easy to use, scalable backend solution. After some exploring, I found PocketBase, and it has greatly exceeded my expectations so far.
 
 Usually, I would say I’m starting a new project because I’m bored and have too much free time. But that is no longer the case - as a full time software engineer, I can assure you the workload is nothing to mess with. Instead, I felt the urge to start a new project because I am a digital nomad, and I find myself frequently being annoyed at how hard it is to find a good working spot. Italians kick me out from their cafes, Indian places rarely have reliable Wi-Fi, and Tunisian spots always have a few smoking enthusiasts. I wanted to build a solution for this, and I thought I might as well do it in React Native - I have experience in React and TypeScript, and have dabbled using Metro Bundler before. I thought “why not? A free extra language for my repertoire”. And we all know recruiters truly love listing those 15 frameworks that you’ve probably never heard of and never will. 

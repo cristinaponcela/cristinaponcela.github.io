@@ -6,8 +6,6 @@ tags: [production, efficiency, my journey]
 image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/StreamYard/ai-clips/ai-announcement-modal-image.png"
 ---
 
-## How Small Changes Boost Revenue
-
 Leveraging A/B testing, making your product more comprehensible, or adding new functionalities can boost revenue by attracting new users or converting old users to paying ones. However, most of these efforts can take a long amount of time to implement, and are never guaranteed to have an impact. And as I have found out with experience, sometimes the smallest changes reap the greatest benefits.
 
 I work in one of the Product squads at Bending Spoons, meaning I am in charge of bringing new functionalities to users. Most of the time, these functionalities range in size and impact, from long projects for a new functionality for all users to very small changes under a feature flag with a small testing group. Each time, we add the relevant metrics so we can assess the impact on users, and their acceptance of the change. We recently tried two new approaches to decide on which functionality additions to prioritize, and I will now live by these religiously:

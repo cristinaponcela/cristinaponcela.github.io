@@ -6,8 +6,6 @@ tags: [production, efficiency, my journey]
 image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/StreamYard/AddDestinationButton/AddDestinationButtons.png"
 ---
 
-## How I Increased StreamYard's Retention by 8% with 30 Minutes of Work
-
 Last time, I spoke about the two new approaches we tried to decide which functionality additions to prioritize:
 
 1. Find your weakest metrics, and find a way to improve user activation in this area,
