@@ -21,7 +21,7 @@ But then, because this was done very fast, I sort of became the designated perso
 
 ## Comments on Mobile
 
-1. Posting Comments
+1\. Posting Comments
 
 Again, to post comments on mobile before, you had to gain the following knowledge by osmosis: go to the "More" menu, click on "Post a Comment", and have a horrible bar at the bottom to post them. And `onSuccess`, the modals would close, so fun times! If you wanted to post several comments, good luck having the patience to reopen *TWO* menus each time.
 
@@ -34,7 +34,7 @@ The first step was to make posting comments way more intuitive. To do this, the 
 Looking much better.
 
 
-2. Select Destination
+2\. Select Destination
 
 Because most of the code was initially made to be as reusable and maintanable as possibe, we had some horrible looking UIs for mobile, that probably just about work for desktop. For example, when clicking on your comments avatar when streaming to multiple destinations, you get a menu to select which destination you want to post the comment to.
 
@@ -47,7 +47,7 @@ So I changed this to use a modal sheet, to look much cleaner and not have to cli
 ![Desktop View](/assets/img/StreamYard/Mobile-Comments/new-select-destination.png){: .normal}
 
 
-3. Interaction with Comments
+3\. Interaction with Comments
 
 And just because StreamYard's previous team seemed to love those horrible menus for mobile, we had another one for comment interaction:
 
@@ -55,14 +55,14 @@ And just because StreamYard's previous team seemed to love those horrible menus 
 
 We needed a way to get rid of the awkward 3 dots menu, which by the way, on desktop appears on hover (so not a great UI for mobile). Thanks to our amazing designer, I got to implement a new flow: touch on a comment, a menu in a modal sheet appears. Easy to close, easy to interact with. If you put a comment on the stage, it should be pinned at the top of the Comments tab (I love getting to use `sticky`!), so it is easy to find it and just as easy to un-stage it with one click (since this is a high impact functionality - users probably want to stage and unstage comments quickly). And if you favorited a comment, you would get a pretty bubble menu (which I built to be reusable, as we did have a `Tabs` in-house component for the desktop UI, but no-one had ever made an equivalent for `MobileTabs`).
 
-![Desktop View](/assets/img/StreamYard/Mobile-Comments/new-interact-with-comments.png){: .normal}
+![Desktop View](/assets/img/StreamYard/Mobile-Comments/new-interact-with-comments.png){: .center}
 
 ![Desktop View](/assets/img/StreamYard/Mobile-Comments/new-comments-favorited.png){: .normal}
 
 This one was a bit of a pain because there were a lot of corner cases to consider (like not showing certain menu options if a user doesn't have permissions, making sure error tips didn't resize components and showed properly, and different destinations allow different interactions). Really teaches one to pay attention to details.
 
 
-4. The Cherry on Top
+4\. The Cherry on Top
 
 To make the most of the limited real-estate on mobile, I now had to add a way to make the menu disappear and the stage size to be reduced when the `CommentsInput` became focused, as this means the keyboard is showing for the user (this can't be reproduced when testing on a computer, even if using the Chrome Simulator).
 
