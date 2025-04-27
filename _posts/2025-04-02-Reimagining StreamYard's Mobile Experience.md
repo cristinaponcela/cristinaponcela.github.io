@@ -3,7 +3,7 @@ title: "Reimagining StreamYard's Mobile Experience"
 date: 2025-04-02 08:42:00 -500
 categories: [StreamYard, Mobile]
 tags: [production, efficiency, my journey]
-image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/StreamYard/Mobile-Comments/banner.png"
+image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/StreamYard/Mobile-Comments/banner-dana.png"
 ---
 
 My latest task has been an exciting one - completely redesigning and revamping StreamYard's mobile experience. It kind of fell into my lap; I had some free time during my last task, and since I love stalking backlog, I found a "small" task that I knew I could do quickly. As per usual, whenever I take on tasks voluntarily because I find them cool, it ends up being a _very_ fun ride indeed.
