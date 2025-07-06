@@ -3,7 +3,7 @@ title: "Adding TikTok as a Destination via RTMP"
 date: 2025-05-11 08:42:00 -500
 categories: [StreamYard, A/B Testing, Destinations]
 tags: [production, new core feature, my journey, SQL]
-image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/StreamYard/TikTok/tiktok-rtmp.png"
+image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/StreamYard/TikTok/tiktok_rtmp.png"
 ---
 
 This has been my favorite task at Bending Spoons yet! As you may know, the core functionality of StreamYard is allowing users to stream to different destinations simultaneously. As such, getting the chance to add a destination like this allowed me to get a brilliant overview and insight of many services in the codebase, and most core functionalities. It was both a fun task and great learning opportunity, and I'm super grateful to my colleagues for letting me steal this one from backlog hehe.
