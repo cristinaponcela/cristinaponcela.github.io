@@ -8,7 +8,7 @@ image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github
 
 In an effort to increase the product's value and widen our customer base, StreamYard has recently implemented a bunch of destinations. As we saw last time, I was in charge of building a generalizable infrastructure for destinations via RTMP under the hood. However, others like KICK or Brightcove, do have API access, and thus need direct implementation. 
 
-This was a cool task for a number of reasons; firstly, because it is a classic full-stack developer task. I got to both add the backend with the necessary authentication and request to KICK, expose the endpoint, add a hook to handle fetching, and add the UI. But also because I got to what "real developers" do - AI won't help with an API this recent, even in public, so I had to dig through the official KICK docu to implement it (and basing a lot of code off of what we already had for the rest of the KICK integration, shoutout to my amazing colleagues for that). Also because I IDed my related tickets [KICKCAT] lol.
+This was a cool task for a number of reasons; firstly, because it is a classic full-stack developer task. I got to both add the backend with the necessary authentication and request to KICK, expose the endpoint, add a hook to handle fetching, and add the UI. But also because I got do to what "real developers" do - AI won't help with an API this recent, even in public, so I had to dig through the official KICK docu to implement it (and basing a lot of code off of what we already had for the rest of the KICK integration, shoutout to my amazing colleagues for that). Also because I IDed my related tickets [KICKCAT] lol.
 
 ![Desktop View](/assets/img/StreamYard/KICK/new-dist-kick.png){: .normal}
 
@@ -45,7 +45,7 @@ export const fetchCategories = (
 	const additionalConfig = { maxAttempts: 3, timeout: 6000, ...extraConfig };
 	return helpers
 		.requestWithErrorTracking({
-			methodName: 'getCategories',
+			methodName: 'fetchCategories',
 			config: {
 				uri: `${API_BASE_URL}/public/v1/categories`,
 				method: HTTP_METHODS.GET,
@@ -71,7 +71,7 @@ export default fetchCategories;
 ```
 
 
-For the search query, we added a minimum limit of 3 characters to avoid unnecessary requests or results being too long. All requests should be wrapped in an auth wrapper, which checks if the token is expired, and if it is it refreshes it and then does the reuest.
+For the search query, we added a minimum limit of 3 characters to avoid unnecessary requests or results being too long. All requests should be wrapped in an auth wrapper, which checks if the token is expired, and if it is it refreshes it and then does the request.
 
 ```typescript
 interface KickApiError extends Error {
