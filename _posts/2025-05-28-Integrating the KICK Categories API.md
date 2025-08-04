@@ -144,6 +144,62 @@ And of course, we need to make sure we update the routes for creating and updati
 
 Then in the frontend, the hardest part was making sure users couldn't send API requests to the categories endpoint if their KICK token was expired. This can be done in 2 main ways. The first would be having a poller that, say, every 24 hours checks token validity and shows an alert if expired (even though we can refresh tokens for requests, a user only has access to their account for 30 days unless they manually re-authenticate), similar to a cron job. Or the second option, we can allow users to make requests, but on failed request with error code 401 (failed to authenticate), show the alert. The best approach may also be to implement both (if you have the resources to run such a cron job). We did receive a massive surge of 401 errors to our endpoint, so I later implemented handling for this.
 
+To make calls to our endpoint and fetch the categories, I created a custom hook, something like:
+
+```typescript
+export const useFetchKickCategories = () => {
+	const [categories, setCategories] = useState<KickCategory[]>([]);
+	const [isLoading, setIsLoading] = useState(true);
+	const [error, setError] = useState<string | null>(null);
+
+	const fetchCategories = useCallback(
+		async (params: { searchQuery: string }) => {
+			try {
+				setIsLoading(true);
+				setError(null);
+				const categoriesResponse = await fetchKickCategories(params.searchQuery); // calls our endpoint
+				const categoriesResult = await categoriesResponse.promise;
+				setCategories(categoriesResult);
+			} catch (err) {
+				setError('Failed to fetch categories');
+			} finally {
+				setIsLoading(false);
+			}
+		}, [],
+	);
+
+	return {
+		categories,
+		isLoading,
+		error,
+		refetch: fetchCategories,
+	};
+};
+```
+
+Another issue I faced was that for other destinations with categories, like Twitch, we handle categories in terms of the id, as they are fixed and hard-coded (because they never change). Meanwhile, Kick has hundreds of categories that are continuously updated, so it is important we verify past selections of id (the only data we store) matches the intended name. Since the time constraint of the deadline made it impossible for me to update the full infrastructure to handle both the ids and names, I added a bit of a workaround - setting the id and name in the local storage. This is only to populate the `SelectCategory` once we try to edit a stream that already had a selected category. This ensures consistency even if the categories change and the id no longer matches your category name.
+
+```typescript
+useEffect(() => {
+   if (props.value !== '') {
+       // Check first in local storage
+       const previousCategories = parseJsonDict(
+           localStorage.getItem(CATEGORIES_LOCAL_STORAGE_KEY),
+       );
+       const existingSelection = previousCategories && previousCategories[destinationId];
+       if (existingSelection && String(existingSelection.id) === String(props.value)) {
+           setSelectedCategory({ 
+               label: existingSelection.name, 
+               value: existingSelection.id 
+           });
+           return;
+       }
+   }
+   setSelectedCategory(null);
+}, [props.value, categories, destinationId]);
+```
+
+
 Other than that, it was just adding the UI to allow users to choose the category!
 
 ![Desktop View](/assets/img/StreamYard/KICK/select-kick-cat.png){: .normal}
