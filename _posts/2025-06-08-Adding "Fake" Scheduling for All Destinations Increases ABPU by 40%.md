@@ -1,5 +1,5 @@
 ---
-title: "Adding "Fake" Scheduling for All Destinations Increases ABPU by 40%"
+title: "Adding \"Fake\" Scheduling for All Destinations Increases ABPU by 40%"
 date: 2025-06-08 08:42:00 -500
 categories: [StreamYard, A/B Testing, Destinations, Product Design]
 tags: [production, feature flags, my journey, changing requirements]
