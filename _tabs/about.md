@@ -8,12 +8,12 @@ order: 4
 
 My name is Cristina Poncela Cubeiro. I am a mathematician and avid coder. 
 
-I am originally from Spain, but studied university in the UK and now live in Italy. I love the beach, travelling and gymming.
+I am originally from Spain, but studied university in the UK and ever since have been moving around from country to country. I have lived in Italy, India and currently Uzbekistan, where I am learning my fourth language, Russian. I love the beach, travelling and gymming.
 
-I learned how to code about one and a half years ago, and kind of stumbled into it. I have built an application in React-Native, 2 applications in Flutter, and a Computer Vision Machine Learning model in TensorFlow. I also have experience in Python, and have built several websites (both from scratch or otherwise). 
+I learned how to code in the summer of 2023, and kind of stumbled into it. I have built an application in React-Native, 2 applications in Flutter, and a Computer Vision Machine Learning model in TensorFlow. I also have experience in Python, and have built several websites (both from scratch or otherwise). Now I work as a Software Engineer for Bending Spoons, in a team called AI Videography, where I work mainly on StreamYard, but also Streamable and Splice.
 
 > Favourite languages:
-Python and Flutter
+Python and Swift
 {: .prompt-tip }
 
 
