@@ -170,7 +170,7 @@ interface Props {
 
 In the process of adding the Google One Tap button, I deleted the black container prompt, as it interfered in the UI and added no value to have 2 Google login prompts in such close proximity:
 
-![Desktop View](/assets/img/StreamYard/GoogleOneTap/container.pngg){: .normal}
+![Desktop View](/assets/img/StreamYard/GoogleOneTap/container.png){: .normal}
 
 
 But for those of you wondering, the changes are:
@@ -189,3 +189,7 @@ windowWithGoogle.google?.accounts.id.prompt();
 
 And using the id in the container `googleOneTapParent`.
 
+
+## Conclusion
+
+This was a fun task because I got to read some docu and figure third-party stuff again. Also because I had never really gotten to implement a Google authentication service before. As I dev, I can definitely say I am already loving the easiness of testing brought by having to only click once to log in. I can imagine this will drastically reduce friction for users.
