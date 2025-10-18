@@ -1,6 +1,6 @@
 ---
 title: "Leveraging Cron Jobs for Infrastructure Reliability"
-date: 2025-06-15 08:42:00 -500
+date: 2025-07-10 08:42:00 -500
 categories: [StreamYard, Crons, Infra]
 tags: [production, backend, my journey, optimization]
 image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/StreamYard/OrphanedRooms/orphaned-rooms.png"
