@@ -3,7 +3,7 @@ title: "86 Features in 10 Months"
 date: 2025-11-14 08:42:00 -500
 categories: [StreamYard, SEO, UA]
 tags: [production, localized pages, backlings, hreflangs, canonical tags, indexing pages, my journey]
-image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/StreamYard/Notes/NOTES_IMAGE.pns"
+image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/StreamYard/"
 ---
 
 

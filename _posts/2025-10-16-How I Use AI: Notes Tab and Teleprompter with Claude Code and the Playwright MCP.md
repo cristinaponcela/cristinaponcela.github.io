@@ -3,7 +3,7 @@ title: "How I use AI: Notes Tab and Teleprompter with Claude Code and the Playwr
 date: 2025-10-16 08:42:00 -500
 categories: [StreamYard, AI, MCPs, QoX]
 tags: [production, claude code, efficiency, my journey]
-image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/StreamYard/Notes/NOTES_IMAGE.pns"
+image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/StreamYard/Notes/"
 ---
 
 The new challenge in software engineering is: can I prompt AI well enough, and give it enough context via MCPs or otherwise, that it can autonomously ship bug-free tasks?

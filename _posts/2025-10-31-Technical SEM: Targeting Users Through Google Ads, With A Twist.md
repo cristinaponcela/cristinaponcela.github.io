@@ -3,7 +3,7 @@ title: "Technical SEM: Targeting Users Through Google Ads, With A Twist"
 date: 2025-10-31 08:42:00 -500
 categories: [StreamYard, SEM, UA]
 tags: [production, Google Ads, landing pages, my journey]
-image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/StreamYard/Notes/NOTES_IMAGE.pns"
+image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/StreamYard/"
 ---
 
 One thing I love from my current SWE job is that at Bending Spoons, SWEs have agency over a lot more than just code. We are also expected to be able to propose metrics, handle feature communications to users, come up with ideas for the product, and even help with notions like SEM (Search Engine Marketing) and SEO (Search Engine Optimization). While these would be traditionally aspects handled by digital marketing consultants, I have spent the last few months becoming the specialized person in this area, since the team had a need for this.
