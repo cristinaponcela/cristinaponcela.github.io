@@ -3,7 +3,7 @@ title: "Completing the Puzzle of a Stupid API"
 date: 2025-09-03 08:42:00 -500
 categories: [StreamYard, APIs, Zendesk, QoX]
 tags: [workarounds, my journey, creativity, problem solving]
-image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/StreamYard/Zendesk/ZENDESK_API.png"
+image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/StreamYard/Zendesk/"
 ---
 
 

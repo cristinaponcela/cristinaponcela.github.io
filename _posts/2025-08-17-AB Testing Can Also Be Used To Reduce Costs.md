@@ -3,7 +3,7 @@ title: "A/B Testing Can Also Be Used To Reduce Costs"
 date: 2025-08-17 08:42:00 -500
 categories: [StreamYard, A/B Testing, QoX]
 tags: [production, costs, my journey]
-image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/StreamYard/NPS/nps.png"
+image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/StreamYard/"
 ---
 
 Usually, most of our A/B tests are run to implement a new feature and test its adoption among users. However, at the Quality of Experience (QoX) squad, we have gotten increasingly creative with how we use our feature flags.
