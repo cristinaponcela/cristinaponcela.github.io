@@ -1,7 +1,7 @@
 # The Site Configuration
 
 # Import the theme
-theme: jekyll-theme-chirpy
+# theme: jekyll-theme-chirpy
 
 # The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
 # If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
@@ -108,7 +108,6 @@ social_preview_image: # string, local or CORS resources
 toc: true
 
 comments:
-
   # Global switch for the post-comment system. Keeping it empty means disabled.
   provider: disqus # [disqus | utterances | giscus]
   # The provider options are as follows:
