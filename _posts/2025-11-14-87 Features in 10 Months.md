@@ -70,6 +70,8 @@ There were 2 main issues: first, AI clip generation only works for videos of len
 
 Second, for AI clip generation the video must first have been processed, meaning that upon finishing a broadcast we must first wait for it to upload to the cloud, and then we can begin generating. Since this can take a while, and there was no proper backend handling of messages to know when processing had finished in that part of the app, I had to come up with a clever workaround under the time constraint. I figured that since upon closing the tab, any hooks would unmount and so we couldn't use a simple `useEffect`, I would instead open a second tab, which showed a modal saying "video processing, please don't close this tab" first, and upon completion showed "AI clips are generating, you can now leave this page". Since we had been super close to having to scratch the task altogether, my teammates were happy to at least be able to finish and ship it on time, even if it was suboptimal, and this was my first taste of just how much agency I can exercise as a Bending Spoons dev. And side note, since then, we have added the proper message handling to no longer need this!
 
+This task was also cool because I had to learn how to use Sengrid and Customer.io to send emails to users once the AI clip generation had finished, by emitting an event and setting up a pipeline, and designing the email.
+
 
 
 ## Referral Countdown
