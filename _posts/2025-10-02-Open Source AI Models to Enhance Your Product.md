@@ -20,48 +20,116 @@ What I found to be a good solution was using [onnxruntime](https://github.com/mi
 
 Either way, this solution is completely free.
 
+See how fast it is too!
 
+<iframe class="embed-video" loading="lazy" src="/assets/img/StreamYard/AIThumbnails/ai-thumbnails-demo.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+As you can see, I also took the chance to add the SY logo and make it a paid option to hide it. We initially thought this may drive conversions as the feature is super fun, but spoiler alert, in the first 10 days it only resulted in 3 conversions :(
+
+<iframe class="embed-video" loading="lazy" src="/assets/img/StreamYard/AIThumbnails/sy-logo.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+This is cool: to generate the final thumbnail, we use the HTML Canvas API to composite all elements. The canvas is set to a specific resolution, and we draw layers in order: background image first, then any uploaded images, followed by the title text with custom styling, the date/time badge with a calendar icon, and finally the logo in the top-right corner. Each element is positioned based on the selected layout style (horizontal, left-aligned, slanted, etc.), with proper margins and padding. So it quite literally is like painting the components on a canvas!
+
+```typescript
+// Create XxY canvas
+const canvas = document.createElement('canvas');
+canvas.width = X;
+canvas.height = Y;
+const ctx = canvas.getContext('2d');
+
+// Layer 1: Background
+ctx.fillStyle = '#000000';
+ctx.fillRect(0, 0, 1920, 1080);
+await drawBackground(ctx, backgroundImage);
+
+// Layer 2: Title text
+drawTitle(ctx, 'My Broadcast Title', {
+  fontSize: 120,
+  color: '#FFFFFF',
+  position: 'left'
+});
+
+// Layer 3: Date/Time badge
+drawDateTime(ctx, 'Dec 15, 2024 • 3:00 PM', {
+  fontSize: 48,
+  position: 'bottom-right',
+  icon: calendarIcon
+});
+
+// Layer 4: Logo
+const logo = await loadImage(logoUrl);
+ctx.drawImage(logo, 1920 - 280 - 30, 30, 280, logoHeight);
+
+// Export as image
+canvas.toBlob(blob => downloadThumbnail(blob), 'image/png');
+```
 
 ### Hugging Face Integration
 
-Hugging Face serves as our model source, offering:
-- Pre-trained models with proven performance
-- Active community maintenance
-- Extensive documentation and examples
-- Regular updates and improvements
+The AI thumbnail feature uses a pre-trained background removal model from Hugging Face, an open-source platform for sharing pre-trained AI models. They have proven performance, active community maintenance and good docu, making the perfect candidate as a free solution to our above issue.
 
-The model pipeline:
-1. Select model from Hugging Face Hub
-2. Convert to ONNX format
-3. Optimize for web deployment
-4. Host on our CDN
-5. Load and run in browser
+The models are in ONNX format, the universal format for AI models that can run anywhere, including browsers, and hosted on our CDN. When a user uploads an image, their browser downloads and caches the model, then processes everything locally using ONNX Runtime Web. This is the JavaScript package that runs ONNX models in the browser using WebAssembly. 
 
-### Open Source Model Benefits
+The processing runs in a Web Worker — a separate browser thread for heavy computation — so the UI stays responsive while the model works. The worker resizes the image to 512×512, runs inference, and sends progress updates back to the main thread. Since we have a clear pipeline for progress messages, I added logic in the UI so that users can see their percentage progress while the image is being processed, to encourage them to wait for this to finish, though it is typically done in under 10 seconds.
 
-Using open source models provides several advantages:
-- Community-tested implementations
-- Transparent architecture
-- Regular improvements
-- No vendor lock-in
-- Cost-effective scaling
+```typescript
+// Main Thread: Send work to Web Worker
+worker.postMessage({ type: 'init_model' });
+worker.postMessage({ type: 'process_image', imageData });
 
-## Licensing and Legal Considerations
+// Main Thread: Receive progress updates
+worker.onmessage = (event) => {
+  if (event.data.type === 'model_loading') showProgress(event.data.progress);
+  if (event.data.type === 'processing') showProgress(event.data.progress);
+  if (event.data.type === 'success') displayResult(event.data.processedImage);
+};
 
-One interesting and unexpected skill I learned during this task was handling licenses and compliance. A lot of the models offered by Hugging Face, especially the RMBD ones, do not actually allow distribution. Thus, I had limited options to test.
+// Web Worker: Process on separate thread
+self.onmessage = async (event) => {
+  if (event.data.type === 'init_model') {
+    model = await loadFromCDN(); // Browser's native HTTP caching caches this automatically
+    postMessage({ type: 'model_loading', progress: 100 });
+  }
+  
+  if (event.data.type === 'process_image') {
+    const prepared = preprocessImage(event.data.imageData);
+    const alphaMask = await model.run(prepared); // AI inference
+    const result = applyMask(event.data.imageData, alphaMask);
+    postMessage({ type: 'success', processedImage: result });
+  }
+};
+```
 
-Onnxruntime, as most npm packages (and open-source frameworks), offers an `MIT` license. This offers commercial use, modification, distribution and private use. So for most intents and purposes, you are crystal clear using this. However, it does have a slightly obscure requirement: that you include the license and copyright notice in your codebase. While not client-facing, this step is important for full compliance and something I was unaware of. But creating a `licenses.json` in your root directory and naming the packages and the license does the trick.
+And this provides the progress updates for the states of loading, processing and uploading.
 
-Less popular, I found the models to offer an `Apache 2.0` license. While slightly stricter, it is still pretty versatile for a monetized product. Again, it offers commercial use, modification, distribution and even patent use. And as `MIT`, it requires a license and copyright notice inclusion, but also to document any state changes and to preserve notices.
+The model then outputs an alpha mask: a grayscale image where white pixels are foreground and black pixels are background. By applying this mask to make the background transparent, we can leverage confidence-based blending to smooth edges. Think of it as edge detection by fading out pixels that we are confident contrast with our image:
 
-So anything I found with either license was golden and good to go, in order to use the technology commercially, modify it for our needs and distribute it to our users while maintaining legal compliance and scaling without licensing concerns.
+```typescript
+// Apply confidence-based alpha blending for smoother edges
+for (let i = 0; i < imageData.width * imageData.height; i += 1) {
+    const pixelIndex = i * 4;
+    const maskValue = maskData[pixelIndex + 3];
 
+    if (maskValue > 240) {
+        // Very high confidence: keep fully opaque
+        resultData[pixelIndex + 3] = 255;
+    } else if (maskValue > 200) {
+        // High confidence: slight enhancement for crisp edges
+        resultData[pixelIndex + 3] = Math.round(maskValue * 1.06);
+    } else if (maskValue > 100) {
+        // Medium confidence: boost for smooth transitions
+        resultData[pixelIndex + 3] = Math.round(maskValue * 1.2);
+    } else if (maskValue > 50) {
+        // Low confidence: reduce to fade out edge artifacts
+        resultData[pixelIndex + 3] = Math.round(maskValue * 0.8);
+    } else {
+        // Very low confidence: fully transparent
+        resultData[pixelIndex + 3] = 0;
+    }
+}
+```
 
-### Loading the Model and Image Processing
-
-Essentially, what we do is create a pipeline for a messaging system that updates with the percentage progress of the model loading. On the completion message, it triggers the image processing. The only interesting part of this logic is where we create an alpha mask for alpha blending - depending on the confidence level of the model output, we decide to blur or delete a part of the background to a greater or lesser degree.  
-
-We do this in stages:
+So the steps are:
 
 ```typescript
 const processImage = async (imageData: Promise => {
@@ -80,54 +148,20 @@ const processImage = async (imageData: Promise => {
 }
 ```
 
-And then the smart edge detection:
 
-We implemented sophisticated edge detection:
+## Licensing and Legal Considerations
 
-```typescript
-// Apply confidence-based alpha blending for smoother edges
-for (let i = 0; i < imageData.width * imageData.height; i += 1) {
-    const pixelIndex = i * 4;
-    const maskValue = maskData[pixelIndex + 3];
+One interesting and unexpected skill I learned during this task was handling licenses and compliance. A lot of the models offered by Hugging Face, especially the RMBD ones, do not actually allow distribution. Thus, I had limited options to test.
 
-    if (maskValue > 240) {
-        // Very high confidence: keep fully opaque
-        resultData[pixelIndex + 3] = 255;
-    } else if (maskValue > 200) {
-        // High confidence: slight enhancement
-        resultData[pixelIndex + 3] = Math.round(maskValue * 1.06);
-    } else if (maskValue > 100) {
-        // Medium confidence: smooth transitions
-        resultData[pixelIndex + 3] = Math.round(maskValue * 1.2);
-    } else if (maskValue > 50) {
-        // Low confidence: fade out artifacts
-        resultData[pixelIndex + 3] = Math.round(maskValue * 0.8);
-    } else {
-        // Very low confidence: fully transparent
-        resultData[pixelIndex + 3] = 0;
-    }
-}
-```
+Onnxruntime, as most npm packages (and open-source frameworks), offers an `MIT` license. This offers commercial use, modification, distribution and private use. So for most intents and purposes, you are crystal clear using this. However, it does have a slightly obscure requirement: that you include the license and copyright notice in your codebase. While not client-facing, this step is important for full compliance and something I was unaware of. But creating a `licenses.json` in your root directory and naming the packages and the license does the trick.
 
-And again, the system provides the progress updates for the states of loading, processing and uploading.
+Less popular, I found the models to offer an `Apache 2.0` license. While slightly stricter, it is still pretty versatile for a monetized product. Again, it offers commercial use, modification, distribution and even patent use. And as `MIT`, it requires a license and copyright notice inclusion, but also to document any state changes and to preserve notices.
 
-## Benefits
+So anything I found with either license was golden and good to go, in order to use the technology commercially, modify it for our needs and distribute it to our users while maintaining legal compliance and scaling without licensing concerns.
 
-1. **Cost Efficiency**:
-   - Eliminated $1,000/month API costs
-   - No per-request charges
-   - Scales with user base at no additional cost
-
-2. **Performance**:
-   - No network latency for API calls
-   - Immediate processing start
-   - Progress tracking for better UX
-
-3. **Reliability**:
-   - Works offline
-   - No API dependency
-   - Consistent performance
 
 ## Conclusion
 
-By moving from ClipDrop's API to a browser-based solution, we've created a more sustainable, cost-effective, and user-friendly AI thumbnail feature. This demonstrates how moving AI processing to the client can dramatically reduce costs while maintaining or improving functionality.
+By moving from ClipDrop's API to a browser-based solution, I created a more sustainable, cost-effective, and user-friendly AI thumbnail feature. WHile it wasn't massively impactful, it was certainly well received - within the first hour, 1k users had interacted with the feature, and within the first 5 days the number rose to 36K. As a dev, this is super fun to see and a privilege to work at a firm that lets us ship features fast and have agency to see tasks through from start to finish.
+
+This also demonstrates the power of open source packages and services - I really believe that nowadays, if you look hard enough, you can find a free and open source solution for 90% of whatever features you want to build.
