@@ -6,7 +6,7 @@ tags: [production, localized pages, backlings, hreflangs, canonical tags, indexi
 image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/StreamYard/SEO/seo.png"
 ---
 
-Recently, the team decided to focus on our SEO scores, and find ways in which we could improve them. Since I was the designated person for this, I had to learn a bunch about indexing pages, sitemaps, canonical and hreflangs, and so in in just a week.
+Recently, the team decided to focus on our SEO scores, and find ways in which we could improve them. Since I was the designated person for this, I learned a bunch about indexing pages, sitemaps, canonical and hreflangs, and so in just a week.
 
 The first clear point that stood out was that we didn't have localized pages - only the default english one was indexed, which was probably damaging our image and score. However, we knew that creating separate pages for each language would be a maintenance nightmare, and so much unnecessary work. It was up to me to find a cheap, clever workaround for this.
 
@@ -20,9 +20,9 @@ So ideally, I had to build it once, serve it everywhere, but make it look like s
 
 ## Using Middleware: URL-Based Locale Detection
 
-StreamYard works in an interesting way: we have a load balancer managed by Google, but the dev env runs with a proxy. We then have 2 main types of pages: SSR (server-side rendering), run in Next.js, which we use for landing pages and any other content that doesn't require authorization, such as blogs, and "static", run in Node.js, which is everything else within the actual product, such as the dashboard and broadcasts. 
+I learned an interesting way in which this can work: wth a load balancer managed by Google, but dev running with a proxy. In this context, there are 2 main types of pages: SSR (server-side rendering), run in Next.js, typically use for landing pages and any other content that doesn't require authorization, such as blogs; and "static", run in Node.js, which is everything else within the actual product, such as the dashboard and broadcasts. 
 
-When we make a request to a URL, we run a Next.js middleware that intercepts every request and decides whether to route it to ssr or static logic. We have our infra rules to declare such paths to the load balancer, though this is not needed for dev - instead we can rebuild a local package for ssr routing. 
+When making a request to a URL, one must run a Next.js middleware that intercepts every request and decides whether to route it to ssr or static logic. With infra rules, you can declare such paths to the load balancer, though this is not needed for dev - instead you can rebuild a local package for ssr routing. 
 
 This was the perfect logic to leverage to easily add the localized versions of our ssr pages - I figured that since the point of the task was to improve our SEO score, and obviously Google can't access and crawl any static pages because they require auth, it was sufficient to handle this in the middleware only for ssr.
 
@@ -99,7 +99,7 @@ function onChangeLanguage(language) {
 }
 ```
 
-This ensures that when a Spanish-speaking user navigates from /es-es/pricing to another page, they stay in Spanish—both for user experience and for Google's crawlers.
+This ensures that when a Spanish-speaking user navigates from `/es-es/pricing` to another page, they stay in Spanish — both for user experience and for Google's crawlers.
 
 
 ## How Google Crawls and Ranks: The Fundamentals
