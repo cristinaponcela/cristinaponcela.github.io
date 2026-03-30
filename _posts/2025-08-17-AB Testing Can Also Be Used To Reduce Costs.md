@@ -39,8 +39,8 @@ Problem is, adding a new condition on a feature this delicate and that touches s
 
 ```typescript
 // Backend creation logic
-const workspaceFlags = await getFeatureFlags(team, server);
-const firstDefault = workspaceFlags.showCloudRecordingToggle === 'true';
+const teamFlags = await getFeatureFlags(team, server);
+const firstDefault = teamFlags.showCloudRecordingToggle === 'true';
 const cloudRecordingPreference = workspace.cloudRecordingPreference ?? firstDefault;
 ```
 
@@ -52,13 +52,13 @@ const defaultRecord =
     isRecordOnly || // free users also have access to cloud recording, even if typically restricted to 5 hours
     isPrerecordedBroadcast || // skip this case as also always allows cloud recording
     isWebinar || // this toggle was not supposed to be included in webinars, which btw are already only for paid users
-    workspaceFlags?.showCloudRecordingToggle === 'control';
+    teamFlags?.showCloudRecordingToggle === 'control';
 ```
 
 Then I had to hide the toggle in the UI for the default experience (control).
 ```typescript
 const shouldShowCloudRecordingToggle =
-    workspaceFlags.showCloudRecordingToggle !== 'control' &&
+    teamFlags.showCloudRecordingToggle !== 'control' &&
     shouldCloudRecord !== undefined && // we then store the value in the broadcast object
     allOutputs.length > 0 && // same as isRecordOnly
     !isPersistentBroadcast &&

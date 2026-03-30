@@ -32,11 +32,11 @@ And then handling the "thank you" step, and the cleanup in the lifecycle to show
 
 Then we had some conditions:
 
-- For new users, only show the survey after the first 30 days to give them time to gether an opinion of the product.
+- For new users, only show the survey after the first X days to give them time to gather an opinion of the product.
 
-- Show the survey every 90 days, so we can analyze the data and our impact each quarter.
+- Show the survey every Y days, so we can analyze the data periodically.
 
-- Only show the user the survey if they have completed a broadcast since the last survey (30 or 90 days).
+- Only show the user the survey if they have completed a broadcast since the last survey (X or Y days).
 
 - If a user dismisses the survey, this counts as handling, so in the same way as submitting, we don't show it again for another 90 days.
 
@@ -45,10 +45,10 @@ Then we had some conditions:
 The logic for this was super cool. I finally got the chance to leverage my mathematics degree and use some fun modular arithmetic lol.
 
 ```typescript
-const INITIAL_SURVEY_DELAY = 30;
-const SURVEY_INTERVAL = 90;
+const INITIAL_SURVEY_DELAY = X_DAYS;
+const SURVEY_INTERVAL = Y_DAYS;
 
-const FEEDBACK_PROGRAM_START = new Date('2025-09-24').getTime(); // 24th September 2025
+const FEEDBACK_PROGRAM_START = new Date('XXXX-XX-XX').getTime();
 
 function calculateCurrentPeriodDay(currentDate: Date): number {
     const totalDaysSinceStart = Math.floor(
@@ -131,7 +131,7 @@ export const useShowFeedbackSurvey = (customer: Customer): boolean => {
 };
 ```
 
-So essentially, we show the survey when `cycleStartDate - userSignUpDate (mod 90) ≡ currentDate - cycleStartDate (mod 90)`, and this ensures the data points are spread uniformly in time.
+So essentially, we show the survey when `cycleStartDate - userSignUpDate (mod Y) ≡ currentDate - cycleStartDate (mod Y)`, and this ensures the data points are spread uniformly in time.
 
 
 Update: this has now been running for a few weeks. So far we don't have many insights, but around 80% of users expressed that their recent experience was positive, and 50% would recommend StreamYard, with the other options split similarly.

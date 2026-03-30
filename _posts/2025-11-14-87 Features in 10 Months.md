@@ -72,7 +72,7 @@ Second, for AI clip generation the video must first have been processed, meaning
 
 And if you clicked on "View your recording", it would directly take you to the Library to that specific recording.
 
-This task was also cool because I had to learn how to use Sengrid and Customer.io to send emails to users once the AI clip generation had finished, by emitting an event and setting up a pipeline, and designing the email.
+This task was also cool because I had to learn how to use several email notification systems to send emails to users once the AI clip generation had finished, by emitting an event and setting up a pipeline, and designing the email.
 
 ![Desktop View](/assets/img/StreamYard/FeatureDump/email.png){: .normal}
 
@@ -121,9 +121,6 @@ Also added some very minor UI changes to revamp the stage: border radius to the 
 The default experience in StreamYard is that if you are in a recording studio but add a destination, you switch to a live stream studio, and vice versa if you delete your destinations. The types of studios are separate entities. We wanted to see if we could simplify the codebase by splitting these further so you can never switch between them. This task was very technically difficult and included a bunch of architecture and UI changes. In the end, metrics were slightly impacted negatively and we decided to keep the default experience.
 
 
-## Revamp Feedback Modal
-
-
 ## Others
 
-Other non-user-facing features include codebase cleanups, mainly of feature flags but also of support to competing platforms like Socio and ReStream, and refactoring our internal messaging system for video updates to use Zod instead of Joi for schemas and validations for better type inference. I also added a bunch of missing metrics
+Other non-user-facing features include codebase cleanups, mainly of feature flags but also of support to competing platforms, revamping the feedback modal and refactoring our internal messaging system for video updates to use Zod instead of Joi for schemas and validations for better type inference. I also added a bunch of missing metrics.

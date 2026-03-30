@@ -37,7 +37,7 @@ So when implementing sound effects, the first step was to add this new type of a
 This implementation was the most comprehensive I have done yet because it spanned most of the codebase. It is by far the task I have completed so far which needed the most context, and to be very careful when adding and releasing code.
 
 1. **Backend Asset Management**
-2. **Janus Message System**
+2. **WebRTC Message System**
 3. **Frontend State Management**
 4. **UI Components**
 
@@ -103,7 +103,7 @@ const backgroundSound = BackgroundAudio({
 
 ### 4. Sound Assets
 
-To make the feature discoverable, especially to old users, it is important to have a few example assets always available for them to test it out. Thus, and since Splice is also owned by Bending Spoons, I ran a script to upload some example assets to our StreamYard s3 bucket, and then call them in the codebase. I literally asked ChatGPT to analyze the massive Splice JSON, which has 150+ sound assets, and pick the ones it thought were best as examples for StreamYard users, and generate the script. The script was something like:
+To make the feature discoverable, especially to old users, it is important to have a few example assets always available for them to test it out. Thus, and since Splice is also owned by Bending Spoons, I ran a script to upload some example assets to our cloud storage bucket, and then call them in the codebase. I literally asked ChatGPT to analyze the massive Splice JSON, which has 150+ sound assets, and pick the ones it thought were best as examples for StreamYard users, and generate the script. The script was something like:
 
 ```javascript
 const fs = require('fs');
@@ -187,7 +187,7 @@ async function uploadToCloud(filePath, fileName) {
                 cacheControl: 'public, max-age=31536000',
             },
         });
-        console.log(`✅ Uploaded ${fileName} to gs://dummy-bucket/${destination}`);
+        console.log(`✅ Uploaded ${fileName} to bucket://my-bucket/${destination}`);
         return true;
     } catch (error) {
         console.error(`❌ Error uploading ${fileName}:`, error.message);

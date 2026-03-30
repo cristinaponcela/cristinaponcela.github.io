@@ -162,6 +162,6 @@ So anything I found with either license was golden and good to go, in order to u
 
 ## Conclusion
 
-By moving from ClipDrop's API to a browser-based solution, I created a more sustainable, cost-effective, and user-friendly AI thumbnail feature. WHile it wasn't massively impactful, it was certainly well received - within the first hour, 1k users had interacted with the feature, and within the first 5 days the number rose to 36K. As a dev, this is super fun to see and a privilege to work at a firm that lets us ship features fast and have agency to see tasks through from start to finish.
+By moving from the previous API to a browser-based solution, I created a more sustainable, cost-effective, and user-friendly AI thumbnail feature. WHile it wasn't massively impactful, it was certainly well received - within the first hour, 1k users had interacted with the feature, and within the first 5 days the number rose to 36K. As a dev, this is super fun to see and a privilege to work at a firm that lets us ship features fast and have agency to see tasks through from start to finish.
 
 This also demonstrates the power of open source packages and services - I really believe that nowadays, if you look hard enough, you can find a free and open source solution for 90% of whatever features you want to build.

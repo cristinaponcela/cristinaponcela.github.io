@@ -205,7 +205,7 @@ You can easily non-index these by adding a meta head. Also, a no-follow tag will
 ```typescript
 // For affiliate pages, add noindex meta tag
 function buildMetadata({ pathname }) {
-  const isAffiliatePage = pathname.startsWith('/aaa/');
+  const isAffiliatePage = ...;
   
   return {
     title: 'StreamYard Referral',
