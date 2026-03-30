@@ -83,27 +83,45 @@ I never managed to import any assets through the MCP, and building pages went ho
 
 Here is an example: you can see it takes 2 calls to the MCP tool to then be unable to import images and get the wrong translations lol, plus it is quite slow.
 
-<iframe class="embed-video" loading="lazy" src="/assets/img/StreamYard/FigmaMCP/example1.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<video controls width="100%" preload="metadata">
+  <source src="https://media.githubusercontent.com/media/cristinaponcela/cristinaponcela.github.io/main/assets/img/StreamYard/FigmaMCP/example1.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 Here, you can see that it doesn't work well when told to build something AND use the design, it gets confused. It did provide the addition of the route correctly, but then never actually did anything with the Figma design. And it is sloooooow.
 
-<iframe class="embed-video" loading="lazy" src="/assets/img/StreamYard/FigmaMCP/example2.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<video controls width="100%" preload="metadata">
+  <source src="https://media.githubusercontent.com/media/cristinaponcela/cristinaponcela.github.io/main/assets/img/StreamYard/FigmaMCP/example2.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 Here, I provided it with the `LandingTemplate`, the in-house component I want it to use, and asked it to use the same structure but just update the media and texts. Instead, it creates a random file somewhere else in the codebase and just calls the `LandingTemplate`.
 
-<iframe class="embed-video" loading="lazy" src="/assets/img/StreamYard/FigmaMCP/example3.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<video controls width="100%" preload="metadata">
+  <source src="https://media.githubusercontent.com/media/cristinaponcela/cristinaponcela.github.io/main/assets/img/StreamYard/FigmaMCP/example3.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 Here, I give up and ask it to just curl the URL to the design for the section with the translations and images, since the direct API call usually works better. For some reason, it still decided to use the MCP tool, but in the end we got there and got the correct translations! No images though. Most prolific 30 mins of my life.
 
-<iframe class="embed-video" loading="lazy" src="/assets/img/StreamYard/FigmaMCP/example4.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<video controls width="100%" preload="metadata">
+  <source src="https://media.githubusercontent.com/media/cristinaponcela/cristinaponcela.github.io/main/assets/img/StreamYard/FigmaMCP/example4.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 And 2 more fails. I did have 1 minor success using it to build the row with the reviews (the one with the people images, 5 stars and the "Trusted by 12M+" text). But tbf this is a super simple component, and it didn't use the in-house `Translation` component or proper styling. So in the end I had to tweak pretty much all of it, and I'm pretty sure it would have done a better job if I had just explained what I wanted ("Create a row with 2 images and a Translation..."). 
 
 While I'm sure we could get better results with better prompting or giving it access to more components, it is imo not worth it for the result, especially given that good old screenshots work well enough already. So I just went back to happy coding with screenshots and Cursor, until Claude Code came along (spoiler for future article!).
 
-<iframe class="embed-video" loading="lazy" src="/assets/img/StreamYard/FigmaMCP/example5.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<video controls width="100%" preload="metadata">
+  <source src="https://media.githubusercontent.com/media/cristinaponcela/cristinaponcela.github.io/main/assets/img/StreamYard/FigmaMCP/example5.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
-<iframe class="embed-video" loading="lazy" src="/assets/img/StreamYard/FigmaMCP/example6.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<video controls width="100%" preload="metadata">
+  <source src="https://media.githubusercontent.com/media/cristinaponcela/cristinaponcela.github.io/main/assets/img/StreamYard/FigmaMCP/example6.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 
 ## Conclusion
