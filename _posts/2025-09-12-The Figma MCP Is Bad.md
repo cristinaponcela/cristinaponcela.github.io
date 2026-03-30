@@ -47,7 +47,6 @@ Alternatively, you can pass the Figma API key as an environment variable:
 
 ```json
 {
-{
   "mcpServers": {
     "figma": {
       "command": "npx",
