@@ -20,121 +20,88 @@ Other than adding the schemas and necessary throw Boom errors, the bulk of the t
 
 ```typescript
 export type FetchCategoriesParams = {
-	/**
-	 * Search query to filter categories
-	 */
-	searchQuery: string;
-	/**
-	 * The access token for authentication
-	 */
-	token: string;
+  searchQuery: string;
+  token: string;
 };
 
-/**
- * Fetch categories, can be updated by passing a search query
- *
- * @see {@link https://docs.kick.com/apis/categories}
- *
- * @param payload - {@link FetchCategoriesParams}
- *
- * @returns Promise that resolves to categories information
- */
-export const fetchCategories = (
-	{ searchQuery, token }: FetchCategoriesParams,
-) => {
-	const additionalConfig = { maxAttempts: 3, timeout: 6000, ...extraConfig };
-	return helpers
-		.requestWithErrorTracking({
-			methodName: 'fetchCategories',
-			config: {
-				uri: `${API_BASE_URL}/public/v1/categories`,
-				method: HTTP_METHODS.GET,
-				headers: {
-					Accept: '*/*',
-					Authorization: `Bearer ${token}`,
-				},
-				qs: {
-					q: searchQuery,
-				},
-			},
-		})
-		.then(_.camelCaseKeys)
-		.then(result => {
-			return fetchCategoriesSchema.parse(result.data);
-		})
-		.catch(err => {
-			throw err;
-		});
-};
+export const fetchCategories = async ({ searchQuery, token }: FetchCategoriesParams) => {
+  const response = await fetch(`${API_BASE_URL}/categories?q=${searchQuery}`, {
+    method: 'GET',
+    headers: {
+      'Accept': '*/*',
+      'Authorization': `Bearer ${token}`,
+    },
+  });
 
-export default fetchCategories;
+  if (!response.ok) {
+    throw new Error(`Failed to fetch categories: ${response.status}`);
+  }
+
+  const result = await response.json();
+  return categoriesSchema.parse(result.data);
+};
 ```
 
 
 For the search query, we added a minimum limit of 3 characters to avoid unnecessary requests or results being too long. All requests should be wrapped in an auth wrapper, which checks if the token is expired, and if it is it refreshes it and then does the request.
 
 ```typescript
-interface KickApiError extends Error {
-	statusCode?: number;
+interface PlatformApiError extends Error {
+  statusCode?: number;
 }
 
-const kickCategoriesRoute = (server: ExternalServer) =>
-	server.route({
-		method: 'GET',
-		path: '...', // our route
-		options: {
-			auth: ...,
-			description: 'Fetch Kick categories',
-			pre: [
-				{
-					method: fetchDestinationFromParams,
-					assign: 'destination' as const,
-				},
-				{ method: ensureDestinationExists },
-			],
-			validate: {
-				query: Joi.object({
-					searchQuery: Joi.string().min(3).required(),
-				}).required(),
-			},
-			response: {
-				schema: fetchCategoriesSchema,
-			},
-		},
-		handler: async req => {
-			const { destination } = req.pre;
+const categoriesRoute = (server: Server) =>
+  server.route({
+    method: 'GET',
+    path: '/api/destinations/{id}/categories',
+    options: {
+      auth: 'session',
+      description: 'Fetch categories for a destination',
+      pre: [
+        { method: fetchDestinationFromParams, assign: 'destination' },
+        { method: ensureDestinationExists },
+      ],
+      validate: {
+        query: Joi.object({
+          searchQuery: Joi.string().min(3).required(),
+        }).required(),
+      },
+      response: {
+        schema: categoriesResponseSchema,
+      },
+    },
+    handler: async (req) => {
+      const { destination } = req.pre;
 
-			if (destination.platform !== 'kick') {
-				throw Boom.badRequest('Destination is not a Kick destination');
-			}
+      if (destination.platform !== 'target-platform') {
+        throw Boom.badRequest('Destination platform mismatch');
+      }
 
-			const kickClient = kick.kickClient(destination);
+      const client = createPlatformClient(destination);
 
-			try {
-				const response = await kickClient.fetchCategories({
-					searchQuery: req.query.searchQuery,
-				});
-				const categories = response.map(category => ({
-					id: category.id,
-					name: category.name,
-					thumbnail: category.thumbnail,
-				}));
+      try {
+        const response = await client.fetchCategories({
+          searchQuery: req.query.searchQuery,
+        });
 
-				return categories;
-			} catch (err: unknown) {
-				if (err instanceof Error) {
-					const kickError = err as KickApiError;
-					throw Boom.boomify(kickError, {
-						statusCode: kickError.statusCode || 500,
-					});
-				}
-				throw Boom.badGateway('Failed to fetch Kick categories');
-			}
-		},
-	});
+        return response.map(category => ({
+          id: category.id,
+          name: category.name,
+          thumbnail: category.thumbnail,
+        }));
+      } catch (err: unknown) {
+        if (err instanceof Error) {
+          const apiError = err as PlatformApiError;
+          throw Boom.boomify(apiError, {
+            statusCode: apiError.statusCode || 500,
+          });
+        }
+        throw Boom.badGateway('Failed to fetch categories');
+      }
+    },
+  });
 
-module.exports = kickCategoriesRoute;
-export default kickCategoriesRoute;
+export default categoriesRoute;
 ```
 
 And of course, we need to make sure we update the routes for creating and updating destinations, so that we can change the category before, during and after the stream.
@@ -147,33 +114,36 @@ Then in the frontend, the hardest part was making sure users couldn't send API r
 To make calls to our endpoint and fetch the categories, I created a custom hook, something like:
 
 ```typescript
-export const useFetchKickCategories = () => {
-	const [categories, setCategories] = useState<KickCategory[]>([]);
-	const [isLoading, setIsLoading] = useState(true);
-	const [error, setError] = useState<string | null>(null);
+export const useFetchCategories = (id: string) => {
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-	const fetchCategories = useCallback(
-		async (params: { searchQuery: string }) => {
-			try {
-				setIsLoading(true);
-				setError(null);
-				const categoriesResponse = await fetchKickCategories(params.searchQuery); // calls our endpoint
-				const categoriesResult = await categoriesResponse.promise;
-				setCategories(categoriesResult);
-			} catch (err) {
-				setError('Failed to fetch categories');
-			} finally {
-				setIsLoading(false);
-			}
-		}, [],
-	);
+  const fetchCategories = useCallback(
+    async (params: { searchQuery: string }) => {
+      try {
+        setIsLoading(true);
+        setError(null);
 
-	return {
-		categories,
-		isLoading,
-		error,
-		refetch: fetchCategories,
-	};
+        const response = await api.getCategories(id, params.searchQuery);
+        const result = await response.json();
+
+        setCategories(result);
+      } catch (err) {
+        setError('Failed to fetch categories');
+      } finally {
+        setIsLoading(false);
+      }
+    },
+    [id],
+  );
+
+  return {
+    categories,
+    isLoading,
+    error,
+    refetch: fetchCategories,
+  };
 };
 ```
 
@@ -181,22 +151,23 @@ Another issue I faced was that for other destinations with categories, like Twit
 
 ```typescript
 useEffect(() => {
-   if (props.value !== '') {
-       // Check first in local storage
-       const previousCategories = parseJsonDict(
-           localStorage.getItem(CATEGORIES_LOCAL_STORAGE_KEY),
-       );
-       const existingSelection = previousCategories && previousCategories[destinationId];
-       if (existingSelection && String(existingSelection.id) === String(props.value)) {
-           setSelectedCategory({ 
-               label: existingSelection.name, 
-               value: existingSelection.id 
-           });
-           return;
-       }
-   }
-   setSelectedCategory(null);
-}, [props.value, categories, destinationId]);
+  if (props.value !== '') {
+    // Check localStorage for previously selected category
+    const cachedCategories = JSON.parse(
+      localStorage.getItem('cached-categories') || '{}'
+    );
+    const existingSelection = cachedCategories[id];
+
+    if (existingSelection && String(existingSelection.id) === String(props.value)) {
+      setSelectedCategory({
+        label: existingSelection.name,
+        value: existingSelection.id,
+      });
+      return;
+    }
+  }
+  setSelectedCategory(null);
+}, [props.value, categories, id]);
 ```
 
 

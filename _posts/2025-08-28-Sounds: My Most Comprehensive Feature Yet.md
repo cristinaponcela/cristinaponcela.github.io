@@ -110,11 +110,11 @@ const fs = require('fs');
 const path = require('path');
 const https = require('https');
 const { execSync } = require('child_process');
-const { Storage } = require('@google-cloud/storage');
+const { Storage } = require('cloud-storage-sdk');
 
-// Initialize Google Cloud Storage, of course I needed to have the necessary permissions for this
+// Initialize cloud storage client - I needed to have the necessary permissions for this
 const storage = new Storage();
-const bucket = storage.bucket('dummy-bucket');
+const bucket = storage.bucket('my-bucket');
 
 const soundData = [
    // json data I got from Splice codebase
@@ -177,8 +177,8 @@ function getAudioInfo(filePath) {
     }
 }
 
-// Function to upload to Google Cloud Storage
-async function uploadToGCS(filePath, fileName) {
+// Function to upload to cloud storage
+async function uploadToCloud(filePath, fileName) {
     try {
         const destination = `some_path`;
         await bucket.upload(filePath, {
@@ -221,7 +221,7 @@ async function processSound(sound) {
         const { bytes, duration } = getAudioInfo(mp3File);
         
         console.log(`☁️ Uploading ${sound.name}...`);
-        const uploaded = await uploadToGCS(mp3File, `sound_${sound._identifier}.mp3`);
+        const uploaded = await uploadToCloud(mp3File, `sound_${sound._identifier}.mp3`);
         
         if (uploaded) {
             // Clean up temp files

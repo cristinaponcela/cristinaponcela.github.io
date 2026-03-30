@@ -20,11 +20,11 @@ Both of these have proven to show a very positive boost in metrics, and I will e
 
 At StreamYard, we offer paying users the possibility to generate clips from their broadcasts using AI - you record your stream, click one button, and you have vertical and captioned highlights to go viral on platforms like Instagram or TikTok. And you can post them directly with one click too!
 
-However, until recently ;), this functionality didn’t seem to be widely used by users. We weren’t sure whether this was because it was too hard to interact with (maybe users couldnt find it, or the UI to trigger generation wasn’t clear enough), or the quality of the clips was just not good enough.
+This functionality didn’t seem to be widely used by users. We weren’t sure whether this was because it was too hard to interact with (maybe users couldn't find it, or the UI to trigger generation wasn’t clear enough), or the quality of the clips was just not good enough.
 
-As it happened in our case, the answer turned out to be both. The great guys at AI were tasked with creating a new version of the AI model - the previous model was quite faulty when finding the highlights of the video, would cut them in weird places, and required a strict Q&A type of conversation to work at even an okay-ish level. So they built v2.
+As it happened in our case, the answer turned out to be both. The great guys at the AI team were tasked with creating a new version of the AI model - the previous model was quite faulty when finding the highlights of the video, would cut them in weird places, and required a strict Q&A type of conversation to work at even an okay-ish level. So they built v2.
 
-Now my job was to find how to fix the other issue, and make the feature super easy to use and well-known by users. To do this, I ran 2 main experiments.
+Now my job was to find how to fix the other issue, and make the feature super easy to use and well-known by users. To do this, we ran 2 main experiments.
 
 The first one was a feature flag that encapsulated the new version of the AI model (we still needed to test it with a controlled group of users first) and the _smallest_ changes I’ve ever added to an experiment: I added a tooltip when the videos were generating, to let the user know they would take tops 30 minutes to finish generating, and added an event in the backend procedure to get picked up by our emailing service to notify the user when the video generation finished. That was it!
 
@@ -45,7 +45,7 @@ For the second experiment, I added a modal at the end of broadcasts to push user
 
 A few small technical issues with this, that I will only get into because I’m a geek:
 
-The way the backend is built, the AI generation can only be triggered when the broadcast’s video has been “processed”, meaning it has been uploaded to the cloud. When you finish a broadcast, processing is triggered first, so we needed to find a way to trigger generation right after processing finished.
+The way the backend is built, the AI generation could only be triggered when the broadcast’s video has been “processed”, meaning it has been uploaded to the cloud. When you finish a broadcast, processing is triggered first, so we needed to find a way to trigger generation right after processing finished.
 
 The obvious initial answer is `useEffect` - let’s just wait until processing finishes, and when it does the change in state will get picked up and trigger the generation. This was actually the initial requirement. The problem was that they hadn’t realized that this crucial step of processing was an obstacle that couldn’t be easily skipped. If we did use `useEffect`, the generation would only be triggered if the user stayed on the page until processing finished, unlikely as this can take a few minutes, and more than suboptimal since the goal was to make interaction with the feature _easier_. Otherwise, the hook unmounts and the function is never triggered. 
 

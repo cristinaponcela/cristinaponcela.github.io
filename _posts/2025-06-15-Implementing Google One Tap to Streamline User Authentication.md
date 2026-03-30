@@ -95,7 +95,7 @@ const useGoogleAuth = ({ action, redirectTo }: Props) => {
         })();
 
         // Make the API request to authenticate with Google
-        const response = await fetch('/api/user/google_auth', {
+        const response = await fetch('/api/auth/google', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -116,7 +116,7 @@ const useGoogleAuth = ({ action, redirectTo }: Props) => {
         }
 
         // Track successful authentication
-        if (data.userId && data.teamId && data.workspaceId) {
+        if (data.userId && data.organizationId) {
           const isSignUp = onetapSignUp || data.action === 'signup';
           
           // Track signup/signin events

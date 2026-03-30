@@ -6,7 +6,7 @@ tags: [production, open source, cost, my journey]
 image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/StreamYard/hugging-face.png"
 ---
 
-StreamYard used to have a feature to create thumbnails using AI. This is available for scheduled posts, and appears through a button in the modal to create a broadcast. However, the past implementation used the API-based client ClipDrop, which cost us around $1k per month. 
+StreamYard used to have a feature to create thumbnails using AI. This is available for scheduled posts, and appears through a button in the modal to create a broadcast. However, the past implementation used a exorbitantly expensive API-based client. 
 
 ![Desktop View](/assets/img/StreamYard/AIThumbnails/ai-thumbnails-button.png){: .normal}
 

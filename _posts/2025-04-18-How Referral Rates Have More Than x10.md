@@ -6,7 +6,7 @@ tags: [production, efficiency, my journey]
 image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/StreamYard/Referrals/banner-dana.png"
 ---
 
-No matter how good a product's marketing is, word of mouth will always account for a significant part of customer base expansion. And the only thing better than having a valuable customer is have the customer bring in several other valuable customers. As such, we have been striving to introduce several features to make sharring referral links easy, and it is already reaping a great amount of success.
+No matter how good a product's marketing is, word of mouth will always account for a significant part of customer base expansion. And the only thing better than having a valuable customer is have the customer bring in several other valuable customers. As such, we have been striving to introduce several features to make sharing referral links easy, and it is already reaping a great amount of success.
 
 ## A/B Tests
 
@@ -88,4 +88,4 @@ Plus, of course, the necessary metrics to track the experiment's performance (wh
 
 Among the other 2 experiments, this one has contributed in increasing the number of users that sign up using a referral link by more than tenfold; from 1 referral every 200 segmented users before, to 6 referrals every 100 users now!
 
-THis was a very fun task, especially considering I surpassed the requirements and made my bosses happy, and managed to finish the implementation and release everything in just 2 days. Another lesson learned with how to conduct A/B testing to make a difference, and see the difference just a few weeks after release.
+This was a very fun task, especially considering I surpassed the requirements and made my bosses happy, and managed to finish the implementation and release everything in just 2 days. Another lesson learned with how to conduct A/B testing to make a difference, and see the difference just a few weeks after release.

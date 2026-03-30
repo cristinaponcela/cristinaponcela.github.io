@@ -20,7 +20,7 @@ So ideally, I had to build it once, serve it everywhere, but make it look like s
 
 ## Using Middleware: URL-Based Locale Detection
 
-I learned an interesting way in which this can work: wth a load balancer managed by Google, but dev running with a proxy. In this context, there are 2 main types of pages: SSR (server-side rendering), run in Next.js, typically use for landing pages and any other content that doesn't require authorization, such as blogs; and "static", run in Node.js, which is everything else within the actual product, such as the dashboard and broadcasts. 
+I learned an interesting way in which this usually works: with a load balancer on prod, but a proxy dev. In this context, there are 2 main types of pages: SSR (server-side rendered), run in Next.js, typically use for landing pages and any other content that doesn't require authorization; and CSR (client-side rendering), run in Node.js, which is everything else within the actual product, such as the dashboard and other authenticated pages. 
 
 When making a request to a URL, one must run a Next.js middleware that intercepts every request and decides whether to route it to ssr or static logic. With infra rules, you can declare such paths to the load balancer, though this is not needed for dev - instead you can rebuild a local package for ssr routing. 
 

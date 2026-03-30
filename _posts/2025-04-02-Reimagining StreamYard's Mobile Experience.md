@@ -68,7 +68,7 @@ To make the most of the limited real-estate on mobile, I now had to add a way to
 
 I am particularly proud of this change because it took me like an hour to figure out. 4 files changed. I love when I get tasks like this, it weirdly makes me feel like a surgeon. I have to find the necessary place in the codebase quickly, and add just a few lines for an entirely new behavior. I love my job.
 
-I created the action in the respective ducks file and creating the reducer and selector, something like:
+I created the action in the respective ducks file and creating the reducer and selector. For those not familiar with the Redux `ducks` patter, this would look something like:
 
 ```typescript
 export const actionTypes = {

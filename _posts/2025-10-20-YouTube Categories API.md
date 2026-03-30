@@ -27,7 +27,7 @@ But this meant it wasn't trivial to implement the API - how could I find a way t
       error:
         response:
           config:
-            timeout: 15000
+            timeout: x
             url: https://www.googleapis.com/youtube/v3/videos?part=snippet
             method: PUT
 ...

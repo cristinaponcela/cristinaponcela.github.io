@@ -30,37 +30,42 @@ The main difficulty of this is that sometimes StreamYard code, especially in the
 For example, to add the modal into the flow, I added something like:
 
 ```typescript
-const initialPage = useMemo(() => {
-		const currentPage = modalSelectors.getPage(state);
+const initialView = useMemo(() => {
+    const currentView = selectors.getCurrentView(appState);
 
-		if (
-			featureFlags.prominentScheduling &&
-			currentPage === '' &&
-			broadcastContentType === 'livestream' &&
-			!hasSeenProminentSchedulingModal &&
-			!broadcast // never in the studio
-		) {
-			return 'prominent-scheduling';
-		}
+    // Feature flag: show scheduling prompt for eligible users
+    const shouldShowScheduling = 
+        featureFlags.prominentScheduling &&
+        currentView === '' &&
+        contentType === 'livestream' &&
+        !user.hasSeenProminentSchedulingModal &&
+        !isEditMode;
 
-		// If no destinations have been connected, 'add-destination' page is shown
-		if (
-			currentPage === '' &&
-			filteredDestinations.length === 0 &&
-			broadcastContentType === 'livestream' &&
-			!hasSkippedDestinationSelectionInDestinationsPage
-		) {
-			return 'add-destination';
-		}
-		return currentPage; // currentPage === '' represents the CreateBroadcastModal, and it is the default
-	}, [
-		state,
-		filteredDestinations.length,
-		broadcastContentType,
-		hasSkippedDestinationSelectionInDestinationsPage,
-		hasSeenProminentSchedulingModal,
-		broadcast,
-	]);
+    if (shouldShowScheduling) {
+        return 'prominent-scheduling';
+    }
+
+    // No items configured yet - prompt user to add one
+    const shouldShowSetup = 
+        currentView === '' &&
+        items.length === 0 &&
+        contentType === 'livestream' &&
+        !user.hasSkippedSetup;
+
+    if (shouldShowSetup) {
+        return 'add-destination';
+    }
+
+    // Default: return current view (empty string = main modal)
+    return currentView;
+}, [
+    appState,
+    items.length,
+    contentType,
+    user.hasSkippedSetup,
+    user.hasSeenProminentSchedulingModal,
+    isEditMode,
+]);
 ```
 
 Then calling the `ProminentSchedulingModal` at this page. It looks like:

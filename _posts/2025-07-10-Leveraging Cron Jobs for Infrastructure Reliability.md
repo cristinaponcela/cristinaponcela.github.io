@@ -25,13 +25,13 @@ And you may be asking yourself how a room can even become orphaned. There are a 
 Like connection timeouts, since the health check has a 2000ms timeout, or connection refused errors.
 
 2. Pod Health Degradation:
-Mainly when a pod's health score reaches 0, which happens after multiple failed health checks, or if the pod becomes unresponsive to HTTP health check requests.
+Mainly when a pod's health score falls below a threshold, which happens after multiple failed health checks, or if the pod becomes unresponsive to HTTP health check requests.
 
 3. Infrastructure Problems:
-It could happen that the pod IP address becomes unreachable, which would not be a problem on our side but rather our server provider. Internally, our API endpoint could also become inaccessible due to errors. Or we could have node failures in the Kubernetes cluster.
+It could happen that the pod IP address becomes unreachable, which would not be a problem on our side but rather our server provider. Internally, our API endpoint could also become inaccessible due to errors. Or we could have node failures in our container cluster.
 
 4. Resource Exhaustion:
-Since pods aren't always stable or reliable, it can happen that they become overloaded and stops responding to health checks, crash due to memory or CPU limits, or get evicted by Kubernetes due to resource exhaustion.
+Since pods aren't always stable or reliable, it can happen that they become overloaded and stop responding to health checks, crash due to memory or CPU limits, or get evicted due to resource exhaustion.
 
 5. Cluster Operations:
 This is mainly something that can happen when we release new code, realize it has an issue, and have to drain the nodes that had already accessed the new code. But also during cluster downsizing operations, maintenance or updates.
@@ -72,7 +72,7 @@ healthCheck: (podIp: string) => request({
     method: 'GET',
     uri: `http://${podIp}:${INTERNAL_API_PORT}/healthcheck`,
     maxAttempts: 1,
-    timeout: 2000
+    timeout: HEALTH_CHECK_TIMEOUT
 })
 ```
 
@@ -128,13 +128,13 @@ reassignOrphanedRoom: (roomId: string): Promise<void> =>
     request({
         method: 'POST',
         uri: `${VIDEO_API_ENDPOINT}/rooms/${roomId}/roomreassignment`,
-        timeout: 12000,
+        timeout: ROOM_REASSIGNMENT_TIMEOUT,
         qs: { force: true },  // Forces reassignment even if room has existing assignment
     })
 ```
-but with validation of whether the room was just reassigned elsewhere to avoid race condiitons.
+but with validation of whether the room was just reassigned elsewhere to avoid race conditions.
 
-We use the threshold check to avoid reassigning too many orphaned rooms at the same time, as this can cause errors. But most importantly, we don't expect to have more than 5 orphaned rooms per hour, even if we are having issues. So if we do have a number of orphaned rooms above the threshold, probably it is beacause we are having a "mass death" of pods, so reassigning many rooms may actually make matters worse.
+We use the threshold check to avoid reassigning too many orphaned rooms at the same time, as this can cause errors. But most importantly, we don't expect to have more than `ORPHANED_ROOMS_THRESHOLD` orphaned rooms per hour, even if we are having issues. So if we do have a number of orphaned rooms above the threshold, probably it is because we are having a "mass death" of pods, so reassigning many rooms may actually make matters worse.
 
 
 ## Monitoring and Metrics

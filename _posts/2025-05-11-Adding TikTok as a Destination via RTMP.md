@@ -27,7 +27,7 @@ The first thing I did was find which functions exactly we used to create and upd
 
 Then most of the work was validations: making sure `'tiktokRtmp'` was an accepted platform in all necessary schemas, and adding a regex for the server URL and stream key. I made sure to add a requisite to the server URL to have to include the string `.tiktok`, as "Custom" destinations are only for subscribed users, and I needed to avoid people abusing the new TikTok implementation to just stream to all destinations for free, as long as they put up with a TikTok-specific UI on StreamYard.
 
-I called the new interface `FakeViaRTMP`, as we use it for destinations we want to show as "separate" destination but in reality just use RTMP behind the scenes. Say we wanted to add another of these,say Telegram, we would now just need to declare Telegram to use the `FakeViaRTMP` interface, then add `'telegram'` in all the validations, and we would be done!
+I abstracted the implementation into a RTMP interface to present platform-specific UX while maintaining a shared backend. Say we wanted to add another of these, say Telegram, we would now just need to declare Telegram to use the interface, then add `'telegram'` in all the validations, and we would be done!
 
 
 ## Frontend Implementation
@@ -73,7 +73,7 @@ To be fair, I had a fair idea that it was going to work - in dev, I had turned o
 
 ![Desktop View](/assets/img/StreamYard/TikTok/tiktok_yt_testing.png){: .normal}
 
-However, I wanted to be cautious, so I added the new destination under a FF and fled to our database on GCP. I wanted to find some users that had recently streamed to TikTok through "Custom", and segment them first as an initial group of beta testers. Since we had recently ran a migration, I could just use BigQuery to find 200 users that had streamed to TikTok in the past 3 months by filtering the stream URLs containing "tiktok". I then closely monitored incoming errors for any platform-specific alerts we received. This was the most foolproof plan I could come up with given that actual testing was off the table.
+However, I wanted to be cautious, so I added the new destination under a FF and fled to our database. I wanted to find some users that had recently streamed to TikTok through "Custom", and segment them first as an initial group of beta testers. Since we had recently ran a migration, I could just use our data warehouse to find 200 users that had streamed to TikTok in the past 3 months by filtering the stream URLs containing "tiktok". I then closely monitored incoming errors for any platform-specific alerts we received. This was the most foolproof plan I could come up with given that actual testing was off the table.
 
 Edit: 2 months later, no bugs reported, and users are happy!
 

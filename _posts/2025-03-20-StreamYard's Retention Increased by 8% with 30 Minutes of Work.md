@@ -1,5 +1,5 @@
 ---
-title: "How I Increased StreamYard's Retention by 8% with 30 Minutes of Work"
+title: "StreamYard's Retention Increased by 8% with 30 Minutes of Work"
 date: 2025-03-20 08:42:00 -500
 categories: [StreamYard, A/B Testing]
 tags: [production, efficiency, my journey]
