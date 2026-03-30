@@ -3,7 +3,7 @@ title: "87 Features in 10 Months"
 date: 2025-11-14 08:42:00 -500
 categories: [StreamYard, SEO, UA]
 tags: [production, localized pages, backlings, hreflangs, canonical tags, indexing pages, my journey]
-image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/StreamYard/"
+image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/StreamYard/FeatureDump/thumbnail-deck.png"
 ---
 
 After a year full of learning and coding adventures, my time at Bending Spoons has come to an end as I pursue a different venture. Thanks to its extremely dynamic and autonomous culture, in the last 10 months (been here for 12, but the first 2 were training), I have built and shipped 87 features completely independently. This has amounted to a total of, drum roll, 214 PRs!

@@ -3,7 +3,7 @@ title: "Technical SEO: Localized Pages, Backlinks, Indexing and More"
 date: 2025-11-11 08:42:00 -500
 categories: [StreamYard, SEO, UA]
 tags: [production, localized pages, backlings, hreflangs, canonical tags, indexing pages, my journey]
-image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/StreamYard/"
+image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/StreamYard/SEO/seo.png"
 ---
 
 Recently, the team decided to focus on our SEO scores, and find ways in which we could improve them. Since I was the designated person for this, I had to learn a bunch about indexing pages, sitemaps, canonical and hreflangs, and so in in just a week.

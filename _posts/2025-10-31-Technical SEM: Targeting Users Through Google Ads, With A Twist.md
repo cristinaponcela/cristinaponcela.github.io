@@ -3,7 +3,7 @@ title: "Technical SEM: Targeting Users Through Google Ads, With A Twist"
 date: 2025-10-31 08:42:00 -500
 categories: [StreamYard, SEM, UA]
 tags: [production, Google Ads, landing pages, my journey]
-image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/StreamYard/"
+image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github.io/refs/heads/main/assets/img/StreamYard/SEM/sem_thumbnail.png"
 ---
 
 One thing I love from my current SWE job is that at Bending Spoons, SWEs have agency over a lot more than just code. We are also expected to be able to propose metrics, handle feature communications to users, come up with ideas for the product, and even help with notions like SEM (Search Engine Marketing) and SEO (Search Engine Optimization). While these would be traditionally aspects handled by digital marketing consultants, I have spent the last few months becoming the specialized person in this area, since the team had a need for this.
@@ -13,14 +13,14 @@ So for those with startups, or who just don't want to hire a specific person for
 
 ## What is SEM?
 
-SEM (Search Engine Marketing) is the practice by which one ...
+We've all heard of SEO, but what is SEM (Search Engine Marketing)? Think of it as the superset of SEO - while SEO focuses on optimizing your site's visibility on the search engine, it does so through organic and unpaid traffic exclusively. Meanwhile, SEM also encompasses paid tactics, such as PPC campaigns (pay-per-click), mainly on providers like Google Ads. 
 
-And most importantly, the goal is not just to increase the overall traffic to your site, but to ensure this translates to user signups and, ideally, subscriptions. To do this, marketing comes into play - the more we can personalize a user's first impression of the product to their needs and specific use-cases, the higher the chance they will come back. And what better aspect to leverage for this than the landing page itself.
+Most importantly, the goal is not just to increase the overall traffic to your site, but to ensure this translates to user signups and, ideally, subscriptions. To do this, marketing comes into play - the more we can personalize a user's first impression of the product to their needs and specific use-cases, the higher the chance they will come back. And what better aspect to leverage for this than the landing page itself.
 
 
 ## Custom Landing Pages
 
-As of recent, I worked on a couple of these. If your codebase is structured correctly, it should be quite simple to generate new, custom landing pages for different use cases. All you likely need to do is change the copies of the text, the images, and perhaps slightly the layout. 
+As of recent, I worked on a couple of these. If your codebase is structured correctly, it should be quite simple to generate new, custom landing pages for different use cases, especially agentically. All you likely need to do is change the copies of the text, the images, and perhaps slightly the layout. 
 
 My examples, for podcasting and live streaming:
 
@@ -29,11 +29,11 @@ My examples, for podcasting and live streaming:
 ![Desktop View](/assets/img/StreamYard/SEM/livestreaming-simplified.png){: .right}
 
 
-For example, say our target demographic is younger people, and let's use StreamYard as an example. We may invest in creating a custom landing page for gaming, with a more modern UI than our usual landing page, with more striking colors, shorter text, and more interactive. This would likely prove to be more successful in attracting our target audience's attention than our default experience.
+For example, say our target demographic is younger people, and let's use StreamYard as an example. We may invest in creating a custom landing page for gaming, with a more modern UI than our usual landing page, with more striking colors, shorter text, and making it more interactive. This would likely prove to be more successful in attracting our target audience's attention than our default experience.
 
-And if instead we want to increase our majority demographic, which is users seeking simplicity and a user-based solution to multi-platform streaming, we may instead create a simple lading page, with clear CTAs and a more neutral color palette.
+And if instead we want to grow the demographic of users seeking simplicity and a user-based solution to multi-platform streaming, we may instead create a simple lading page, with clear CTAs and a more neutral color palette.
 
-Google Ads allows you to run ads based on a number of things - device (mobile or desktop), country, ... And of course, depending on when you decide to bid on the keywords, you get to decide the date. So you can leverage custom landing pages for a number of examples:
+Google Ads allows you to run ads based on a number of things - device (mobile or desktop), country, etc. And of course, depending on when you decide to bid on the keywords, you get to decide the date. So you can leverage custom landing pages for a number of examples:
 
 - *Use case.* For example, podcasting, gaming, simplicity and web-based, etc.
 - Create *mobile specific* ones. Since portrait streamers tend to use different platforms, such as Instagram and TikTok, than desktop users, one could add an emphasis to these.
@@ -66,13 +66,13 @@ By creating `/custom1`, `/custom2`, `/custom3`, etc as above, we have created co
 
 This means I can change which landing page a campaign points to simply by updating a feature flag - no code changes, no deployments, no waiting for engineering cycles.
 
-For example, if I want to test whether our podcasting landing page performs better than our live streaming one for a specific keyword, I just set `custom1` to `/podcasting-simplified`, create my Google Ads campaign pointing to `streamyard.com/custom1`, and bid on the keyword. If I want to try a different landing page next week, I just update the feature flag. The redirect happens seamlessly, and all the tracking data comes along for the ride.
+For example, if I want to test whether our podcasting landing page performs better than our live streaming one for a specific keyword, I just set `custom1` to `/podcasting-simplified`, create my Google Ads campaign pointing to `streamyard.com/custom1`, and bid on the keyword. If I want to try a different landing page next week, I just update the feature flag. The redirect happens seamlessly, and all the tracking data is preserved in the query string.
 
 This approach is invaluable for rapid experimentation - I can test multiple landing pages across different campaigns simultaneously, and the marketing team can iterate without bothering the engineering team every time they want to try something new.
 
 ## Tracking the Impact: Google Tag Manager, GCLID and UTM Parameters
 
-Of course, we need to somehow track metrics to check whther the campaign is being successful. Specifically, we want to knpw which campaigns are driving actual signups versus just clicks.
+Of course, we need to somehow track metrics to check whether the campaign is being successful. Specifically, we want to know which campaigns are driving actual signups versus just clicks.
 
 When someone clicks on a Google Ad, Google automatically appends a parameter called `gclid` (Google Click ID) to the URL. This is a unique identifier for that specific click, and it's how Google tracks conversions back to the original ad.
 
@@ -97,7 +97,7 @@ const buildDestinationURLWithParams = (
 
 We can solve this with a dual-storage approach. When a user first lands on the site from an ad, you extract all the tracking parameters from the URL and store them in two places: session storage (which lasts for the current browsing session) and local storage (which persists even after the browser closes). This way, if someone clicks our ad, browses around, closes their browser, and comes back a week later to sign up, we still know which campaign brought them in.
 
-When they finally convert - whether that's signing up for an account or subscribing to a plan - we push all this tracking data to Google Tag Manager, through the dataLayer. This contains data like the user ID, the signup method (email versus Google OAuth), and all the tracking parameters we've been preserving. GTM then takes this data and forwards it to whatever you configured - typically, Google Ads for conversion tracking, Google Analytics for funnel analysis, and your internal analytics system.
+When they finally convert - whether that's signing up for an account or subscribing to a plan - we push all this tracking data to Google Tag Manager, via the data layer. This contains data like the user ID, the signup method (email versus Google OAuth), and all the tracking parameters we've been preserving. GTM then takes this data and forwards it to whatever you configured - typically, Google Ads for conversion tracking, Google Analytics for funnel analysis, and your internal analytics system.
 
 This means when we look at our Google Ads dashboard and see "Campaign X drove 50 conversions," we know those are actual signups, not just clicks or page views.
 
