@@ -8,25 +8,23 @@ image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github
 
 Recently, the team decided to focus on our SEO scores, and find ways in which we could improve them. Since I was the designated person for this, I learned a bunch about indexing pages, sitemaps, canonical and hreflangs, and so in just a week.
 
-The first clear point that stood out was that we didn't have localized pages - only the default english one was indexed, which was probably damaging our image and score. However, we knew that creating separate pages for each language would be a maintenance nightmare, and so much unnecessary work. It was up to me to find a cheap, clever workaround for this.
 
+## Localized Version of SSR Pages
 
-## The Challenge: Localized Version of our SSR Pages
+The first clear point that stood out was localized pages - when only the default english page is indexed, it damages your image and score. And while having localized content is highly valued by search engines, this must be served in a particular way, so that it is clear for the search engine which page corresponds to which, just in a different language, otherwise it can actually damage your SEO score.
 
-Having localized content is highly valued by search engines. However, this must be served in a particular way, so that it is clear for the search engine which page corresponds to which, just in a different language, otherwise it can actually damage your SEO score.
-
-So ideally, I had to build it once, serve it everywhere, but make it look like separate pages to search engines.
+However, creating separate pages for each language can be a maintenance nightmare, and so much unnecessary work. I found a cheap, clever workaround to build it once, serve it everywhere, but make it look like separate pages to search engines.
 
 
 ## Using Middleware: URL-Based Locale Detection
 
-I learned an interesting way in which this usually works: with a load balancer on prod, but a proxy dev. In this context, there are 2 main types of pages: SSR (server-side rendered), run in Next.js, typically use for landing pages and any other content that doesn't require authorization; and CSR (client-side rendering), run in Node.js, which is everything else within the actual product, such as the dashboard and other authenticated pages. 
+A common practice is to use a load balancer on prod, but a proxy in dev, as intermediaries between server and client. In this context, there are 2 main types of pages: SSR (server-side rendered), typically run in Next.js and used for landing pages and any other content that doesn't require authorization; and CSR (client-side rendering), typically run in Node.js, which is everything else within the actual product, such as the dashboard and other authenticated pages. 
 
-When making a request to a URL, one must run a Next.js middleware that intercepts every request and decides whether to route it to ssr or static logic. With infra rules, you can declare such paths to the load balancer, though this is not needed for dev - instead you can rebuild a local package for ssr routing. 
+When making a request to a URL, you can leverage a Next.js middleware that intercepts every request and decides whether to route it to the ssr or csr logic. With infra rules, you can declare such paths to the load balancer, though this is not needed for dev - instead you can rebuild a local package for ssr routing. 
 
-This was the perfect logic to leverage to easily add the localized versions of our ssr pages - I figured that since the point of the task was to improve our SEO score, and obviously Google can't access and crawl any static pages because they require auth, it was sufficient to handle this in the middleware only for ssr.
+This is the perfect logic to leverage to easily add localized versions of ssr pages - since the point is to improve your SEO score, and obviously Google can't access and crawl any client pages because they require auth, it is sufficient to handle this in the middleware only for ssr.
 
-What I did was add some logic where we identify ssr pages to extract the locale from the URL pattern. When a user visits `/es-es/pricing`, the middleware detects Spanish, sets the appropriate cookies (for language and refresh), and rewrites the URL internally instead of redirecting. So instead of creating an entirely new Spanish version of the `/pricing` page, I am simply changing the URL name that we see, changing the language, and serving the original `/pricing` page, but in Spanish. This "fools" both the user and Google.
+You can get this done by adding some logic to the middleware where you identify ssr pages to extract the locale from the URL pattern. For instance, when a user visits `/es-es/pricing`, the middleware detects Spanish, sets the appropriate cookies (for language and refresh), and rewrites the URL internally instead of redirecting. So instead of creating an entirely new Spanish version of the `/pricing` page, you are simply changing the URL name that we see, changing the language, and serving the original `/pricing` page, but in Spanish. This "fools" both the user and Google.
 
 ```typescript
 // Middleware intercepts requests
@@ -70,7 +68,7 @@ export const middleware = (request) => {
 
 ## Language Picker Integration: Keeping Users and Bots in Sync
 
-On StreamYard, we have an option in the footer of all ssr pages to allow users to pick their preferred language in which to see our content.Since we already have that adding a locale to a URL "picks" the language, we now needed the converse: when a user picks a language from the footer, we need to update both the cookie (for persistence) and the URL (for SEO). The implementation builds a localized URL by prepending the language code:
+On StreamYard, as for most established products, there already existed an option in the footer of all ssr pages to allow users to pick their preferred language in which to see our content. Since the middleware changes already enable that adding a locale to a URL "picks" the language, we now need the converse: when a user picks a language from the footer, we need to update both the cookie (for persistence) and the URL (for SEO). The implementation builds a localized URL by prepending the language code:
 
 ```typescript
 function buildLocalizedUrl(language, currentUrl) {
