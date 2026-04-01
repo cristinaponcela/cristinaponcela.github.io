@@ -1,5 +1,5 @@
 ---
-title: "StreamYard's Retention Increased by 8% with 30 Minutes of Work"
+title: "How 30 Minutes of Work Improved Our Retention"
 date: 2025-03-20 08:42:00 -500
 categories: [StreamYard, A/B Testing]
 tags: [production, efficiency, my journey]
@@ -11,7 +11,7 @@ Last time, I spoke about the two new approaches we tried to decide which functio
 1. Find your weakest metrics, and find a way to improve user activation in this area,
 2. Find your strongest metric, and reduce user friction in that area,
 
-And I gave an example of the first one. Today, I want to share an example of how I used the second one, and how 30 minutes of work here increased user activation with destinations by 5% and retention by 8%, our most crucial metrics.
+And I gave an example of the first one. Today, I want to share an example of how I used the second one, and how 30 minutes of work here significantly boosted user activation with destinations and retention — our most crucial metrics.
 
 
 ## Context

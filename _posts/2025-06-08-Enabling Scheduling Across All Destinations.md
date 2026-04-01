@@ -1,5 +1,5 @@
 ---
-title: "Adding Fake Scheduling for All Destinations Increases ABPU by 40% "
+title: "Enabling Scheduling Across All Destinations: Testing User Preferences"
 date: 2025-06-08 08:42:00 -500
 categories: [StreamYard, A/B Testing, Destinations, Product Design]
 tags: [production, feature flags, my journey, changing requirements]
@@ -131,6 +131,6 @@ And that was that! I could have a call with my colleagues the next day and give 
 
 I particularly liked this task because when there is a problem with a task's requirements, I try to take it as an opportunity to think outside of the box, find a solution and re-shape the task, and I'm happy that I work in a place where I can do that. I also find that taking extra time to investigate tasks' feasibility, and taking agency and responsibility for your tasks to find ways to bring them to the finish line usually ends in happy teammates and success stories.
 
-In the end, the test was quite successful - we found out that late stage ABPU increased by 40%, and +20% users chose to schedule a broadcast, suggesting pent-up demand for more scheduling visibility. However, -4% users entered the studio and -3% users creating a broadcast, suggesting having two options and an extra step to enter the studio has a damaging effect. Out of the segmented users and interactions with the `ProminentSchedulingModal`, 20% chose to schedule and 80% chose to enter now.
+In the end, the test was quite successful - we found out that late stage ABPU increased substantially, and users chose to schedule a broadcast in meaningful numbers, suggesting pent-up demand for more scheduling visibility. However, some users didn't enter the studio and creating a broadcast saw a slight dip, suggesting having two options and an extra step to enter the studio has a damaging effect. Out of the segmented users and interactions with the `ProminentSchedulingModal`, the majority chose to enter now while a significant portion chose to schedule for later.
 
 This was kind of inconclusive because we still need to investigate the drop, but the findings proved invaluable and achieved the goal of the task, which was to test a hypothesis on user behavior and what they want. For sure this has taught me that these kinds of experiments are more valuable than they seem at face value because they teach you in which direction to take your product given your customer base's behavioral patterns.

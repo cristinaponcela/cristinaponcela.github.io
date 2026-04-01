@@ -72,11 +72,11 @@ Shockingly in comparison to the effort’s size, these changes had an excellent 
 
 #### Higher adoption among users:
 
-- 19.7% of subscribed users, and 16.6% of converted users, completing a broadcast tapped "Generate AI Clips".
+- A significant percentage of subscribed and converted users adopted the feature after the modal.
 
 #### The modal significantly increased interaction:
 
-- Tap on "Generate Clips": 5x higher for all users and 7x higher for converted users.
-- AI Clips downloads were 4x higher for all users and converted users.
+- The "Generate Clips" tap rate increased dramatically across all user segments.
+- AI Clips downloads showed corresponding strong improvements.
 
 The lesson I learned here: sometimes, the smallest changes, when well placed and with a clear impact in mind, can have the biggest outcomes.

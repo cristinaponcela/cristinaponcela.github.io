@@ -303,7 +303,7 @@ At this point, I was basically done. It was now a matter of adding the ducks and
 
 ## Monitoring and Metrics
 
-Now I just had to make sure I had the necessary logging for sound actions and updates, to check for errors and log the state where necessary as done for musics, and to add metrics so we could track user adoption. About 10% of new users use the feature, and it has a retention of about 50% (% of users that have used it once and use it again). Not a massive adoption, but in line with expectations and quite successful for a QoX feature (since the goal is to improve the product in the long-run).
+Now I just had to make sure I had the necessary logging for sound actions and updates, to check for errors and log the state where necessary as done for musics, and to add metrics so we could track user adoption. Adoption was moderate among new users with healthy retention, in line with expectations and quite successful for a QoX feature (since the goal is to improve the product in the long-run).
 
 
 ## Conclusion
