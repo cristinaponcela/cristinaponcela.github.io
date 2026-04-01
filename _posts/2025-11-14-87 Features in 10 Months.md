@@ -8,7 +8,31 @@ image: "https://raw.githubusercontent.com/cristinaponcela/cristinaponcela.github
 
 After a year full of learning and coding adventures, my time at Bending Spoons has come to an end as I pursue a different venture. Thanks to its extremely dynamic and autonomous culture, in the last 10 months (been here for 12, but the first 2 were training), I have built and shipped 87 features completely independently. This has amounted to a total of, drum roll, 214 PRs!
 
-This article is thus a bit of a feature dump, more for myself than anything, with the highlights of things I've built and feel proud of. I obviously won't include any features already mentioned in other articles, and bear in mind that not all features are extremely impactful, or even user facing. But I can proudly go having built at least 25 very impactful and well-received features under my built, which alone would be impressive to me in just 10 months :D
+I want to use this article as an opportunity to reflect on the lessons learned in the past year, and my experiences as a developer. It is also a bit of a feature dump, more for myself than anything, with the highlights of things I've built and feel proud of. I obviously won't include any features already mentioned in other articles, and bear in mind that not all features are extremely impactful, or even user facing. But I can proudly go having built at least 25 very impactful and well-received features under my built, which alone would be impressive to me in just 10 months :D
+
+
+## A Year at Bending Spoons
+
+I don't think I surprise anyone when I say Bending Spoons is a demanding company. It is competitive to get into, and they expect high quality and effort in return. It is also likely the best initial formal software engineering role I could have asked for.
+
+I have briefly mentioned this before, but what made this opportunity ripe for fast learning was the amount of agency and responsibility that Bending gives to it's developers. Regular releases to production teach you accountability, and they also encourage you to get involved in more than just the coding (and PR reviews), such as suggesting metrics, analyzing data, coming up with product features, designing UI/UX where needed, and the list goes on.
+
+One thing that was striking to me from the beginning is the company structure - when I joined, we were still an SME (as we had ~400 workers), and it has since crossed the bar to corporation (and surpassed the $1B ARR milestone). But even now, it still operates as a collection of small startups, each with its own small but well-oiled team, which bring true meaning to being 10x engineers, when statistically comparing number of workers running the product pre and post acquisition.
+
+Between these teams, there is very open communication, and we are encouraged to share learnings with each other when things work so all products can reap the benefits. Examples of this are the [Google One Tap implementation](/posts/Implementing-Google-One-Tap-to-Streamline-User-Authentication/), recommended to us in StreamYard from a colleagues learnings and after WeTransfer also implemented it. And likewise, I then walked other colleagues across another team through the implementation. Another example was [testing the Figma MCP](/posts/The-Figma-MCP-Is-Bad/), which was something I was tasked to do, to then produce a report and share it in a public internal channel (spoiler alert: we didn't end up using the Figma MCP much).
+
+Something else I learned and was super valuable is the structure of these small teams. In my experience, 3 members was the perfect size for an engineering team. After this, meetings ran too long (and we had too many), we ran into each other when picking up new tasks, and PR review cycles got messy. So while the actual team for the product may indeed be bigger, it is subdivided into tiny teams with very clearly defined scopes, as is the case of User Acquisition or Quality of Experience, 2 of the teams I was in.
+
+Also, there is the question of how to best allocate resources. I already find myself thinking back to Bending when reasoning about this problem. One thing they have really figured out is training - I have mentioned this before, but the encourage engineers to become T-shaped (deep knowledge in specialized area but enough knowledge across whole product that could land changes if needed). As such, the training is 2 months and makes you build an end to end software product.
+
+I can imagine I will use this principle in the future, especially in startups. When building a new product, it is critical in my opinion that, if you have a small team, everyone has enough context around the different components of the product, and they rotate the work to at least work on other parts from time to time to stay sharp.
+
+
+## The Dawn of AI
+
+Also an interesting change this year was the mass adoption of coding agents such as Claude Code. Of course others AI tools existed already, such as the autocomplete or Cursor. But nothing has changed the way we as developers work as much as agentic development.
+
+While they can achieve incredible feats, it is almost sad, because these tools used to save me time, help me work effectively, and still required a lot of actual thinking on my part. But as the industry starts widely adopting them, the expectation has become higher and now we are just expected to release more. While at Bending they remained very conscious of code quality and still respected proper review cycles, I can only imagine not all companies will follow this ideology, and many will fail.
 
 
 ## The Right Aside Side Tab Animation
